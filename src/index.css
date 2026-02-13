@@ -7,3 +7,10 @@
 body {
   @apply bg-tws-navy text-white font-sans antialiased;
 }
+
+@layer utilities {
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+}

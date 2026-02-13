@@ -15,6 +15,9 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
+      animation: {
+        marquee: 'marquee 40s linear infinite',
+      },
     },
   },
   plugins: [],
