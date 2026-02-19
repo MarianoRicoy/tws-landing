@@ -86,7 +86,7 @@ export default function Navbar() {
             <div className="flex flex-col p-6 gap-6 text-center text-muted-white">
               <a href="/#servicios" onClick={handleServicesClick} className="hover:text-white transition-colors py-2">Servicios</a>
               <Link href="/en-desarrollo" onClick={handleMobileLinkClick} className="hover:text-white transition-colors py-2">Productos</Link>
-              <Link href="/en-desarrollo" onClick={handleMobileLinkClick} className="hover:text-white transition-colors py-2">Nosotros</Link>
+              <Link href="/nosotros" onClick={handleMobileLinkClick} className="hover:text-white transition-colors py-2">Nosotros</Link>
               <button 
                 onClick={handleContactAndCloseMenu}
                 className="w-full px-5 py-3 rounded-full bg-accent-cyan text-white font-semibold transition-opacity hover:opacity-90"

@@ -26,35 +26,35 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   }
 
   return (
-    <div onClick={onClose} className="fixed inset-0 z-50 flex items-center justify-center bg-background-dark/80 backdrop-blur-xl p-4">
-      <div onClick={(e) => e.stopPropagation()} className="relative w-full max-w-5xl bg-surface-dark/60 rounded-3xl border border-white/10 shadow-2xl overflow-hidden">
+    <div onClick={onClose} className="fixed inset-0 z-50 flex items-start justify-center bg-background-dark/80 backdrop-blur-xl p-4 overflow-y-auto">
+      <div onClick={(e) => e.stopPropagation()} className="relative w-full max-w-5xl bg-surface-dark/60 rounded-3xl border border-white/10 shadow-2xl my-8">
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 text-muted-white hover:text-white transition-colors z-10"
+          className="absolute top-4 right-4 md:top-6 md:right-6 text-muted-white hover:text-white transition-colors z-10"
         >
           <X className="h-7 w-7" />
         </button>
         
-        <div className="grid md:grid-cols-12">
+        <div className="flex flex-col-reverse md:grid md:grid-cols-12">
           {/* Left Column */}
-          <div className="md:col-span-4 bg-black/20 p-10 flex flex-col justify-between">
+          <div className="md:col-span-4 bg-black/20 p-6 md:p-10 flex flex-col justify-between rounded-b-3xl md:rounded-bl-3xl md:rounded-tr-none">
             <div>
-              <img src="/logo.svg" alt="TWS Logo" className="h-8 w-auto mb-12" />
+              <img src="/logo.svg" alt="TWS Logo" className="h-7 w-auto mb-8" />
               <div className="space-y-6">
                 <ContactInfo icon={Mail} title="Email" value="hola@tws.tech" href="mailto:hola@tws.tech" />
                 <ContactInfo icon={Linkedin} title="LinkedIn" value="/company/tws-tech" href="https://www.linkedin.com/company/tws-tech" />
                 <ContactInfo icon={MapPin} title="Ubicación" value="Remote / Global" href="#" />
               </div>
             </div>
-            <p className="text-muted-white text-xs tracking-widest uppercase">Tecnologia Con Proposito</p>
+            <p className="text-muted-white text-xs tracking-widest uppercase mt-8 md:mt-0">Tecnologia Con Proposito</p>
           </div>
 
           {/* Right Column */}
-          <div className="md:col-span-8 p-10">
-            <h2 className="text-4xl font-bold text-white mb-3">Ponte en contacto</h2>
-            <p className="text-muted-white mb-8">¿Tienes dudas? Estamos aquí para escucharte.</p>
+          <div className="md:col-span-8 p-6 md:p-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Ponte en contacto</h2>
+            <p className="text-muted-white mb-6 text-sm md:text-base">¿Tienes dudas? Estamos aquí para escucharte.</p>
             <form>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-muted-white mb-2">Nombre completo</label>
                   <input type="text" id="name" placeholder="Ej: Alex Soul" className="w-full bg-surface-dark border border-white/10 rounded-md p-3 text-white focus:outline-none focus:border-accent-cyan transition-colors" />
@@ -64,7 +64,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   <input type="email" id="email" placeholder="alex@ejemplo.com" className="w-full bg-surface-dark border border-white/10 rounded-md p-3 text-white focus:outline-none focus:border-accent-cyan transition-colors" />
                 </div>
               </div>
-              <div className="mb-6">
+              <div className="mb-4">
                 <label htmlFor="subject" className="block text-sm font-medium text-muted-white mb-2">Asunto de interés</label>
                 <select id="subject" className="w-full bg-surface-dark border border-white/10 rounded-md p-3 text-white focus:outline-none focus:border-accent-cyan transition-colors appearance-none">
                   <option>Consulta General</option>
@@ -73,9 +73,9 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   <option>Carreras</option>
                 </select>
               </div>
-              <div className="mb-8">
+              <div className="mb-6">
                 <label htmlFor="message" className="block text-sm font-medium text-muted-white mb-2">Tu mensaje</label>
-                <textarea id="message" rows={5} placeholder="Cuéntanos cómo podemos ayudarte..." className="w-full bg-surface-dark border border-white/10 rounded-md p-3 text-white focus:outline-none focus:border-accent-cyan transition-colors"></textarea>
+                <textarea id="message" rows={4} placeholder="Cuéntanos cómo podemos ayudarte..." className="w-full bg-surface-dark border border-white/10 rounded-md p-3 text-white focus:outline-none focus:border-accent-cyan transition-colors"></textarea>
               </div>
               <div className="flex justify-center">
                 <button
