@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function NuestraHistoria() {
   return (
     <section className="py-24">
@@ -29,8 +31,13 @@ export default function NuestraHistoria() {
             </div>
           </div>
           <div>
-            <div className="w-full h-96 bg-white/5 rounded-2xl flex items-center justify-center">
-              <p className="text-muted-white">[Image Placeholder]</p>
+            <div className="relative w-full h-96 rounded-2xl overflow-hidden">
+              <Image
+                src="/oficinastws.png"
+                alt="Oficinas TWS"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
