@@ -2,22 +2,22 @@ import Image from 'next/image';
 
 const images = [
   {
-    src: '/Fotos Cultura/Argentina(1).jpg',
+    src: '/FotosCultura/Argentina(1).jpg',
     alt: 'Team in Argentina',
     className: 'col-span-1 row-span-1',
   },
   {
-    src: '/Fotos Cultura/Medellin(1).jpg',
+    src: '/FotosCultura/Medellin(1).jpg',
     alt: 'Team in Medellin',
     className: 'col-span-2 row-span-1',
   },
   {
-    src: '/Fotos Cultura/Medellin(2).jpg',
+    src: '/FotosCultura/Medellin(2).jpg',
     alt: 'Another team picture in Medellin',
     className: 'col-span-2 row-span-1',
   },
   {
-    src: '/Fotos Cultura/Argentina(2).jpg',
+    src: '/FotosCultura/Argentina(2).jpg',
     alt: 'Another team picture in Argentina',
     className: 'col-span-1 row-span-1',
   },

@@ -1,6 +1,6 @@
 'use client';
 
-import { Hash, Heart, Zap } from 'lucide-react';
+import { BrainCircuit, Code, Repeat } from 'lucide-react';
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 
@@ -17,7 +17,7 @@ const cardVariants: Variants = {
   }),
 };
 
-const ValueCard = ({ icon: Icon, title, children, index }: { icon: React.ElementType, title: string, children: React.ReactNode, index: number }) => (
+const PillarCard = ({ icon: Icon, title, children, index }: { icon: React.ElementType, title: string, children: React.ReactNode, index: number }) => (
   <motion.div
     className="group relative bg-surface-dark/40 rounded-2xl p-8 border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2"
     variants={cardVariants}
@@ -39,39 +39,38 @@ const ValueCard = ({ icon: Icon, title, children, index }: { icon: React.Element
   </motion.div>
 );
 
-const values = [
+const pillars = [
   {
-    icon: Hash,
-    title: 'Ingeniería',
-    description: 'Arquitecturas sólidas y escalables. Creemos en el código limpio como base de cualquier solución duradera.',
+    icon: BrainCircuit,
+    title: 'Estrategia y Diseño',
+    description: 'Antes de escribir una línea de código, definimos la arquitectura y el roadmap del producto. Pensamos para escalar.',
   },
   {
-    icon: Heart,
-    title: 'Alma',
-    description: 'Empatía en el diseño y propósito en el desarrollo. Ponemos a las personas en el centro de la tecnología.',
+    icon: Code,
+    title: 'Ingeniería y Ejecución',
+    description: 'Construimos con código limpio y las mejores prácticas. Creamos soluciones robustas, seguras y de alto rendimiento.',
   },
   {
-    icon: Zap,
-    title: 'Innovación',
-    description: 'Exploración constante de nuevas fronteras. Incubamos ideas propias que desafían el status quo del mercado.',
+    icon: Repeat,
+    title: 'Iteración e Impacto',
+    description: 'Lanzamos, medimos y optimizamos. Creemos en la mejora continua para maximizar el impacto en el usuario final.',
   },
 ];
 
-export default function Valores() {
+export default function Enfoque() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-28">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Nuestros <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Valores</span>
+            Así encaramos cada <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">proyecto</span>
           </h2>
-          <p className="text-muted-white/80 max-w-xl mx-auto text-base md:text-lg">Los pilares que sostienen cada línea de código que escribimos.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-          {values.map((value, i) => (
-            <ValueCard key={value.title} icon={value.icon} title={value.title} index={i}>
-              {value.description}
-            </ValueCard>
+          {pillars.map((pillar, i) => (
+            <PillarCard key={pillar.title} icon={pillar.icon} title={pillar.title} index={i}>
+              {pillar.description}
+            </PillarCard>
           ))}
         </div>
       </div>

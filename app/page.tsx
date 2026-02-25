@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import Enfoque from '@/components/Enfoque';
 import Services from '@/components/Services';
 import TechStack from '@/components/TechStack';
 import InfiniteMarquee from '@/components/InfiniteMarquee';
@@ -8,6 +9,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <Enfoque />
       <Services />
       <TechStack />
       <CallToAction />

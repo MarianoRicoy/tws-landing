@@ -11,27 +11,45 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const handleMobileLinkClick = () => {
-    setIsMobileMenuOpen(false);
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      const sectionId = href.substring(2);
+      
+      const scrollToSection = () => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const navbarHeight = 100; // Approximate height of the navbar + margin
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+        
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      };
+
+      if (pathname !== '/') {
+        router.push('/');
+        setTimeout(scrollToSection, 100); // Wait for page transition
+      } else {
+        scrollToSection();
+      }
+    } else {
+      // Standard page navigation, let Next's Link handle it
+      router.push(href);
+    }
   };
 
   const handleContactAndCloseMenu = () => {
     openModal();
-    setIsMobileMenuOpen(false);
-  };
-
-  const handleServicesClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
     if (isMobileMenuOpen) {
-      handleMobileLinkClick();
-    }
-    if (pathname !== '/') {
-      router.push('/');
-      setTimeout(() => {
-        document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    } else {
-      document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -49,7 +67,7 @@ export default function Navbar() {
         {/* Desktop Menu (Centered) */}
         <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="flex items-center gap-8 text-sm font-medium text-muted-white">
-            <a href="/#servicios" onClick={handleServicesClick} className="hover:text-white transition-colors">Servicios</a>
+            <a href="/#servicios" onClick={(e) => handleNavigation(e, '/#servicios')} className="hover:text-white transition-colors cursor-pointer">Servicios</a>
             <Link href="/en-desarrollo" className="hover:text-white transition-colors">Productos</Link>
             <Link href="/nosotros" className="hover:text-white transition-colors">Nosotros</Link>
           </div>
@@ -84,9 +102,9 @@ export default function Navbar() {
         {isMobileMenuOpen && (
           <div className="absolute top-full mt-4 left-0 w-full bg-surface-dark/90 backdrop-blur-md border border-white/10 rounded-xl shadow-xl md:hidden">
             <div className="flex flex-col p-6 gap-6 text-center text-muted-white">
-              <a href="/#servicios" onClick={handleServicesClick} className="hover:text-white transition-colors py-2">Servicios</a>
-              <Link href="/en-desarrollo" onClick={handleMobileLinkClick} className="hover:text-white transition-colors py-2">Productos</Link>
-              <Link href="/nosotros" onClick={handleMobileLinkClick} className="hover:text-white transition-colors py-2">Nosotros</Link>
+              <a href="/#servicios" onClick={(e) => handleNavigation(e, '/#servicios')} className="hover:text-white transition-colors py-2 cursor-pointer">Servicios</a>
+              <Link href="/en-desarrollo" onClick={(e) => handleNavigation(e, '/en-desarrollo')} className="hover:text-white transition-colors py-2">Productos</Link>
+              <Link href="/nosotros" onClick={(e) => handleNavigation(e, '/nosotros')} className="hover:text-white transition-colors py-2">Nosotros</Link>
               <button 
                 onClick={handleContactAndCloseMenu}
                 className="w-full px-5 py-3 rounded-full bg-accent-cyan text-white font-semibold transition-opacity hover:opacity-90"

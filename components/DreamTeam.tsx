@@ -1,10 +1,15 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
-const TeamMemberCard = ({ name, role }: { name: string, role: string }) => (
+const TeamMemberCard = ({ name, role, imageSrc }: { name: string, role: string, imageSrc?: string }) => (
   <div className="text-center">
     <div className="relative w-48 h-48 mx-auto mb-4">
-      <div className="w-full h-full rounded-full bg-white/5 flex items-center justify-center">
-        <p className="text-muted-white">[Image]</p>
+      <div className="w-full h-full rounded-full bg-white/5 flex items-center justify-center overflow-hidden relative">
+        {imageSrc ? (
+          <Image src={imageSrc} alt={name} fill className="object-cover" />
+        ) : (
+          <p className="text-muted-white">[Image]</p>
+        )}
       </div>
     </div>
     <h3 className="font-bold text-white text-lg">{name}</h3>
@@ -27,10 +32,10 @@ export default function DreamTeam() {
             </Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <TeamMemberCard name="Ezequiel Petruzzi" role="CEO/CTO" />
-            <TeamMemberCard name="Rafael Alvarez Lopez" role="Head of Backend" />
-            <TeamMemberCard name="Maria victoria Gallo" role="Product & Growth Lead" />
-            <TeamMemberCard name="Mariano Ricoy" role="Frontend Lead" />
+            <TeamMemberCard name="Ezequiel Petruzzi" role="CEO/CTO" imageSrc="/DreamTeam/EzePetruzzi.jpeg" />
+            <TeamMemberCard name="Rafael Alvarez Lopez" role="Head of Backend" imageSrc="/DreamTeam/donpablo.jpg"/>
+            <TeamMemberCard name="Maria victoria Gallo" role="Product & Growth Lead" imageSrc="/DreamTeam/VickyGallo.jpeg" />
+            <TeamMemberCard name="Mariano Ricoy" role="Frontend Lead" imageSrc="/DreamTeam/Marianoricoy.png" />
           </div>
         </div>
       </div>

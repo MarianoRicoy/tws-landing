@@ -80,9 +80,9 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               <div className="flex justify-center">
                 <button
                   type="submit"
-                  className="flex items-center justify-center gap-3 py-3 px-8 bg-accent-cyan hover:opacity-90 rounded-md text-white font-bold transition-opacity text-base"
+                  className="py-3 px-8 bg-accent-cyan hover:opacity-90 rounded-md text-white font-bold transition-opacity text-base"
                 >
-                  Enviar Mensaje <Send className="w-5 h-5" />
+                  Enviar Mensaje
                 </button>
               </div>
             </form>

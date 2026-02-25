@@ -6,7 +6,7 @@ import { useModal } from '@/contexts/ModalContext';
 export default function Hero() {
   const { openModal } = useModal();
   return (
-    <section className="relative pt-36 pb-36 md:pt-48 md:pb-48">
+    <section className="relative pt-36 pb-20 md:pt-48 md:pb-24">
       {/* Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-glow/30 rounded-full blur-[150px] -z-10"></div>
       

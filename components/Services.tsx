@@ -1,57 +1,101 @@
+'use client';
+
+import { Code, FlaskConical, Check } from 'lucide-react';
 import Link from 'next/link';
 import AnimatedText from './AnimatedText';
-import { Code, FlaskConical } from 'lucide-react';
+import { motion, Variants } from 'framer-motion';
+import React from 'react';
 
-const servicesText = 'No somos solo desarrolladores. Somos creadores que entienden el código desde ambas perspectivas: el servicio al cliente y el producto propio.';
+const servicesText = 'Fusionamos la precisión de una software factory con la audacia de un product lab, creando soluciones robustas y explorando nuevas fronteras tecnológicas.';
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.5,
+      ease: 'easeOut',
+    },
+  }),
+};
+
+const ServiceCard = ({ icon: Icon, title, description, items, href, index, iconClassName }: {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  items: string[];
+  href: string;
+  index: number;
+  iconClassName?: string;
+}) => (
+  <Link href={href} passHref>
+    <motion.div
+      className="group relative h-full bg-surface-dark/40 rounded-2xl p-8 border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2"
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+      custom={index}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent-cyan/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      
+      <div className="relative flex flex-col h-full">
+        <div className="w-14 h-14 rounded-lg bg-background-dark border border-white/10 flex items-center justify-center mb-6 group-hover:border-accent-cyan/50 transition-colors duration-300">
+          <Icon size={28} className={iconClassName} />
+        </div>
+        <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
+        <p className="text-muted-white mb-8 leading-relaxed text-sm flex-grow">
+          {description}
+        </p>
+        <ul className="space-y-3">
+          {items.map((item, i) => (
+            <li key={i} className="flex items-start text-muted-white text-sm">
+              <Check className="w-4 h-4 text-accent-cyan mr-3 mt-0.5 flex-shrink-0" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.div>
+  </Link>
+);
+
+const services = [
+  {
+    icon: Code,
+    title: 'Software Factory',
+    description: 'Desarrollamos soluciones tecnológicas de alto impacto para empresas que buscan escalar. Código limpio, arquitectura escalable y entrega ágil.',
+    items: ['Desarrollo Web & Mobile (React/Native)', 'Staff Augmentation', 'MVP para Startups'],
+    href: '/en-desarrollo',
+    iconClassName: 'text-white'
+  },
+  {
+    icon: FlaskConical,
+    title: 'Product Lab',
+    description: 'Nuestra incubadora interna. Detectamos problemas reales y construimos productos SaaS propios para resolverlos. Innovación sin intermediarios.',
+    items: ['Incubación de Ideas', 'Desarrollo de Productos Propios', 'Experimentación Continua'],
+    href: '/en-desarrollo',
+    iconClassName: 'text-white'
+  }
+];
 
 export default function Services() {
   return (
-    <section id="servicios" className="py-24 relative">
+    <section id="servicios" className="pt-12 pb-24 md:pt-16 md:pb-32">
       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-          Un Ecosistema <span className="text-accent-cyan">Híbrido</span>
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          Un Ecosistema <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Híbrido</span>
         </h2>
-        <AnimatedText text={servicesText} className="text-muted-white max-w-xl mx-auto text-lg justify-center" />
+        <AnimatedText text={servicesText} className="text-muted-white/80 max-w-2xl mx-auto text-base md:text-lg justify-center" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8">
-        
-        {/* Card 1: Software Factory */}
-        <Link href="/en-desarrollo" className="block group">
-          <div className="h-full rounded-3xl p-8 bg-[radial-gradient(ellipse_at_top,_#254893_0%,_#000001_100%)] border border-white/10 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(54,115,237,0.2)] group-hover:border-white/20">
-            <div className="w-12 h-12 rounded-xl bg-[#111111] border border-white/10 flex items-center justify-center mb-6">
-              <Code size={24} className="text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-4">Software Factory</h3>
-            <p className="text-muted-white mb-8 leading-relaxed text-sm">
-              Desarrollamos soluciones tecnológicas de alto impacto para empresas que buscan escalar. Código limpio, arquitectura escalable y entrega ágil.
-            </p>
-            <ul className="space-y-4">
-              <li className="flex items-center text-muted-white text-sm"><span className="text-accent-cyan mr-3 text-lg">•</span>Desarrollo Web & Mobile (React/Native)</li>
-              <li className="flex items-center text-muted-white text-sm"><span className="text-accent-cyan mr-3 text-lg">•</span>Staff Augmentation</li>
-              <li className="flex items-center text-muted-white text-sm"><span className="text-accent-cyan mr-3 text-lg">•</span>MVP para Startups</li>
-            </ul>
-          </div>
-        </Link>
-
-        {/* Card 2: Product Lab */}
-        <Link href="/en-desarrollo" className="block group">
-          <div className="h-full rounded-3xl p-8 bg-[radial-gradient(ellipse_at_top,_#254893_0%,_#000001_100%)] border border-white/10 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(54,115,237,0.2)] group-hover:border-white/20">
-            <div className="w-12 h-12 rounded-xl bg-[#111111] border border-white/10 flex items-center justify-center mb-6">
-              <FlaskConical size={24} className="text-green-500 fill-green-500/20" />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-4">Product Lab</h3>
-            <p className="text-muted-white mb-8 leading-relaxed text-sm">
-              Nuestra incubadora interna. Detectamos problemas reales y construimos productos SaaS propios para resolverlos. Innovación sin intermediarios.
-            </p>
-            <ul className="space-y-4">
-              <li className="flex items-center text-muted-white text-sm"><span className="text-accent-cyan mr-3 text-lg">•</span>Incubación de Ideas</li>
-              <li className="flex items-center text-muted-white text-sm"><span className="text-accent-cyan mr-3 text-lg">•</span>Desarrollo de Productos Propios</li>
-              <li className="flex items-center text-muted-white text-sm"><span className="text-accent-cyan mr-3 text-lg">•</span>Experimentación Continua</li>
-            </ul>
-          </div>
-        </Link>
-
+        {services.map((service, i) => (
+          <ServiceCard key={service.title} {...service} index={i} />
+        ))}
       </div>
     </section>
   )
