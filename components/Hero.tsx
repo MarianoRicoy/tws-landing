@@ -12,7 +12,7 @@ export default function Hero() {
       
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center text-center space-y-8">
-          <p className="text-accent-cyan text-sm font-semibold tracking-wider">
+          <p className="text-base text-accent-cyan tracking-widest uppercase font-semibold" style={{ textShadow: '0 0 25px rgba(58, 130, 246, 0.8)' }}>
             SOFTWARE FACTORY + PRODUCTOS
           </p>
 

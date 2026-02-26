@@ -7,26 +7,21 @@ export default function Footer() {
   const { openModal } = useModal();
 
   return (
-    <footer className="bg-background-dark text-sm">
+    <footer className="w-full bg-gradient-to-t from-black via-background-dark to-surface-dark/50 text-sm">
       <div className="max-w-7xl mx-auto px-6 py-16">
 
-        <div className="border-b border-white/10 my-12"></div>
-
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="flex flex-col md:flex-row justify-between gap-12 mb-16 px-0">
           
-          {/* Column 1: Company Info */}
-          <div className="space-y-4 md:col-span-1">
-            <Link href="/" className="flex items-center">
-              <img src="/logo.svg" alt="TWS Logo" className="h-7 w-auto" />
+          {/* Column 1: Isologo */}
+          <div className="flex justify-center md:justify-start md:w-1/4">
+            <Link href="/" className="inline-block">
+              <img src="/Isologo.svg" alt="TWS Isologo" className="h-10 w-auto" />
             </Link>
-            <p className="text-muted-white leading-relaxed pr-8">
-              Transformamos ideas complejas en productos digitales con alma. Software Factory + Product Lab.
-            </p>
           </div>
 
           {/* Links Container */}
-          <div className="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
             {/* Services */}
             <div>
               <h4 className="font-bold text-white mb-6">Servicios</h4>
@@ -60,10 +55,12 @@ export default function Footer() {
 
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-muted-white text-xs">
-          <p>&copy; {new Date().getFullYear()} TWS Tech With Soul. Todos los derechos reservados.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
+        {/* Copyright Row */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-muted-white text-[10px] md:text-xs tracking-wider px-0">
+          <div className="text-center md:text-left mb-4 md:mb-0">
+            <p>&copy; {new Date().getFullYear()} TWS Tech With Soul. Todos los derechos reservados.</p>
+          </div>
+          <div className="flex gap-6">
             <Link href="/en-desarrollo" className="hover:text-white transition-colors">Privacidad</Link>
             <Link href="/en-desarrollo" className="hover:text-white transition-colors">Términos</Link>
           </div>

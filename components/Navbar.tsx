@@ -55,7 +55,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50">
-      <nav className="relative max-w-4xl mx-auto mt-6 rounded-full bg-surface-dark/30 backdrop-blur-md border border-white/10 flex justify-between items-center px-6 py-3">
+      <nav className="relative max-w-4xl mx-auto mt-6 rounded-full bg-gradient-to-t from-black via-background-dark to-surface-dark/30 backdrop-blur-md border border-white/10 flex justify-between items-center px-6 py-3">
         
         {/* Logo */}
         <div className="flex-1">
@@ -100,7 +100,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full mt-4 left-0 w-full bg-surface-dark/90 backdrop-blur-md border border-white/10 rounded-xl shadow-xl md:hidden">
+          <div className="absolute top-full mt-4 left-0 w-full bg-gradient-to-t from-black via-background-dark to-surface-dark/90 backdrop-blur-md border border-white/10 rounded-xl shadow-xl md:hidden">
             <div className="flex flex-col p-6 gap-6 text-center text-muted-white">
               <a href="/#servicios" onClick={(e) => handleNavigation(e, '/#servicios')} className="hover:text-white transition-colors py-2 cursor-pointer">Servicios</a>
               <Link href="/en-desarrollo" onClick={(e) => handleNavigation(e, '/en-desarrollo')} className="hover:text-white transition-colors py-2">Productos</Link>

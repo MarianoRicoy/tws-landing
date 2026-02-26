@@ -26,34 +26,35 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   }
 
   return (
-    <div onClick={onClose} className="fixed inset-0 z-50 flex items-start justify-center bg-background-dark/80 backdrop-blur-xl p-4 overflow-y-auto">
-      <div onClick={(e) => e.stopPropagation()} className="relative w-full max-w-5xl bg-surface-dark/60 rounded-3xl border border-white/10 shadow-2xl my-8">
+    <div onClick={onClose} className="fixed inset-0 z-50 flex items-start justify-center bg-background-dark/80 backdrop-blur-xl p-4 overflow-y-auto pt-20 pb-10">
+      <div onClick={(e) => e.stopPropagation()} className="relative w-full max-w-5xl bg-surface-dark/60 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl overflow-hidden">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 md:top-6 md:right-6 text-muted-white hover:text-white transition-colors z-10"
+          className="absolute top-4 right-4 md:top-6 md:right-6 text-muted-white hover:text-white transition-colors z-20 bg-background-dark/50 p-2 rounded-full md:bg-transparent md:p-0"
         >
-          <X className="h-7 w-7" />
+          <X className="h-6 w-6 md:h-7 md:w-7" />
         </button>
         
-        <div className="flex flex-col-reverse md:grid md:grid-cols-12">
+        <div className="flex flex-col-reverse md:grid md:grid-cols-12 min-h-screen md:min-h-0">
           {/* Left Column */}
-          <div className="md:col-span-4 bg-black/20 p-6 md:p-10 flex flex-col justify-between rounded-b-3xl md:rounded-bl-3xl md:rounded-tr-none">
-            <div>
-              <img src="/logo.svg" alt="TWS Logo" className="h-7 w-auto mb-8" />
-              <div className="space-y-6">
-                <ContactInfo icon={Mail} title="Email" value="hola@tws.tech" href="mailto:hola@tws.tech" />
-                <ContactInfo icon={Linkedin} title="LinkedIn" value="/company/tws-tech" href="https://www.linkedin.com/company/tws-tech" />
-                <ContactInfo icon={MapPin} title="Ubicación" value="Remote / Global" href="#" />
+          <div className="md:col-span-4 bg-black/20 p-6 md:p-10 flex flex-col justify-between items-center text-center md:items-start md:text-left border-t md:border-t-0 md:border-r border-white/5">
+            <div className="w-full flex flex-col items-center md:items-start">
+              <img src="/Isologo.svg" alt="TWS Isologo" className="h-8 w-auto mb-10 md:h-6" />
+              <div className="space-y-6 w-full text-left">
+                <ContactInfo icon={Mail} title="Email" value="tws.registros@gmail.com" href="mailto:tws.registros@gmail.com" />
+                <ContactInfo icon={Linkedin} title="LinkedIn" value="/company/tech-with-soul" href="https://www.linkedin.com/company/tech-with-soul" />
               </div>
             </div>
-            <p className="text-muted-white text-xs tracking-widest uppercase mt-8 md:mt-0">Tecnologia Con Proposito</p>
+            <p className="text-sm font-medium italic mt-12 md:mt-0" style={{ color: '#3b82f6', textShadow: '0 0 15px rgba(58, 130, 246, 0.8)' }}>
+              Tecnología con Propósito
+            </p>
           </div>
 
           {/* Right Column */}
           <div className="md:col-span-8 p-6 md:p-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Ponte en contacto</h2>
             <p className="text-muted-white mb-6 text-sm md:text-base">¿Tienes dudas? Estamos aquí para escucharte.</p>
-            <form>
+            <form className="space-y-4 md:space-y-0">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-muted-white mb-2">Nombre completo</label>
@@ -77,10 +78,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 <label htmlFor="message" className="block text-sm font-medium text-muted-white mb-2">Tu mensaje</label>
                 <textarea id="message" rows={4} placeholder="Cuéntanos cómo podemos ayudarte..." className="w-full bg-surface-dark border border-white/10 rounded-md p-3 text-white focus:outline-none focus:border-accent-cyan transition-colors"></textarea>
               </div>
-              <div className="flex justify-center">
+              <div className="flex justify-center pb-4 md:pb-0">
                 <button
                   type="submit"
-                  className="py-3 px-8 bg-accent-cyan hover:opacity-90 rounded-md text-white font-bold transition-opacity text-base"
+                  className="w-full md:w-auto py-3 px-8 bg-accent-cyan hover:opacity-90 rounded-md text-white font-bold transition-opacity text-base"
                 >
                   Enviar Mensaje
                 </button>
