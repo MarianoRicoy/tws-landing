@@ -4,6 +4,21 @@
 
 @layer base {
   body {
-    @apply bg-background-dark text-white antialiased;
+    @apply bg-[#020617] text-white antialiased;
+  }
+}
+
+@layer utilities {
+  .bg-orizon-glow {
+    background: 
+      radial-gradient(ellipse at 50% 100%, rgba(37, 99, 235, 0.4) 0%, rgba(37, 99, 235, 0.1) 40%, transparent 80%),
+      #020617;
+  }
+  
+  .bg-mesh-grid {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
   }
 }

@@ -29,19 +29,19 @@ export default function DreamTeam() {
     {
       name: "Ezequiel Petruzzi",
       role: "CEO / CTO",
-      imageSrc: "/DreamTeam/EzePetruzzi.jpeg",
+      imageSrc: "/DreamTeam/EzeTwsPro.jpeg",
       description: "Eze es el que tiene el mapa en la cabeza cuando todos todavía estamos mirando el GPS recalculando. Piensa producto, piensa negocio y piensa arquitectura… todo al mismo tiempo. Si algo parece imposible, él ya está abriendo una pestaña mental con tres soluciones posibles y un plan B por si acaso.\n\nEs básicamente el que mezcla visión de futuro con código y lo hace parecer algo normal."
     },
     {
       name: "Rafael Alvarez Lopez",
       role: "Head of Backend",
-      imageSrc: "/DreamTeam/rafa.webp",
+      imageSrc: "/DreamTeam/RafaTwspro.jpeg",
       description: "Rafa es el señor de las profundidades. Donde nadie ve nada, él ve endpoints, estructuras limpias y bases de datos respirando ordenadamente. Si algo funciona perfecto y nadie sabe por qué… probablemente Rafa estuvo ahí.\n\nEs el que hace que todo lo que pasa 'detrás' no explote. Y si explota, ya tiene el log abierto antes de que termines la frase."
     },
     {
       name: "Maria Victoria Gallo",
       role: "Product & Growth Lead",
-      imageSrc: "/DreamTeam/VickyGallo.jpeg",
+      imageSrc: "/DreamTeam/VickyTwsPro.jpeg",
       description: "Vicky es la que convierte ideas en estrategia y estrategia en resultados. No solo piensa qué construir, sino por qué, para quién y cómo hacerlo crecer. Mientras otros ven features, ella ve métricas, oportunidad y posicionamiento.\n\nEs el cerebro que conecta negocio, experiencia y expansión. Si algo crece, no es casualidad."
     },
     {
