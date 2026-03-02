@@ -67,26 +67,30 @@ export default function DreamTeam() {
     setSelectedMember(null);
   };
   return (
-    <section className="py-24">
+    <section data-theme="dark" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-gradient-to-t from-black via-background-dark to-surface-dark/40 rounded-3xl border border-white/10 p-8 md:p-12">
-          <div className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">El Dream Team</h2>
-            <p className="text-base" style={{ color: '#3b82f6', textShadow: '0 0 25px rgba(58, 130, 246, 0.8)' }}>Las mentes brillantes detrás de Tech With Soul.</p>
-          </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {teamMembers.map((member, index) => (
-              <TeamMemberCard
-                key={index}
-                name={member.name}
-                role={member.role}
-                imageSrc={member.imageSrc}
-                onClick={() => handleMemberClick(member)}
-              />
-            ))}
-          </div>
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Quiénes <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Somos</span>
+          </h2>
+          <p className="text-lg text-muted-white">
+            Conoce a los profesionales que impulsan la visión técnica y estratégica de TWS.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
+          {teamMembers.map((member, index) => (
+            <TeamMemberCard
+              key={index}
+              name={member.name}
+              role={member.role}
+              imageSrc={member.imageSrc}
+              onClick={() => handleMemberClick(member)}
+            />
+          ))}
         </div>
       </div>
+      
       <TeamMemberModal
         isOpen={isModalOpen}
         onClose={closeModal}

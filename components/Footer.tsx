@@ -7,65 +7,66 @@ export default function Footer() {
   const { openModal } = useModal();
 
   return (
-    <footer className="w-full bg-gradient-to-t from-black via-background-dark to-surface-dark/50 text-sm">
+    <footer data-theme="dark" className="w-full bg-[#0F1219] text-sm border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 py-16">
 
         {/* Main Footer Content */}
         <div className="flex flex-col md:flex-row justify-between gap-12 mb-16 px-0">
           
-          {/* Column 1: Isologo */}
+          {/* Column 1: Brand Name */}
           <div className="flex justify-center md:justify-start md:w-1/4">
             <Link href="/" className="inline-block">
-              <img src="/Isologo.svg" alt="TWS Isologo" className="h-10 w-auto" />
+              <span className="text-xl font-bold text-muted-white tracking-tight">
+                Tech With Soul
+              </span>
             </Link>
           </div>
 
-          {/* Links Container */}
-          <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-            {/* Services */}
-            <div>
-              <h4 className="font-bold text-white mb-6">Servicios</h4>
-              <ul className="space-y-3 text-muted-white">
-                <li><Link href="/#servicios" className="hover:text-white transition-colors">Desarrollo Web</Link></li>
-                <li><Link href="/#servicios" className="hover:text-white transition-colors">Aplicaciones Móviles</Link></li>
-                <li><Link href="/#servicios" className="hover:text-white transition-colors">Consultoría</Link></li>
-              </ul>
-            </div>
-
-            {/* Company */}
-            <div>
-              <h4 className="font-bold text-white mb-6">Empresa</h4>
-              <ul className="space-y-3 text-muted-white">
-                <li><Link href="/nosotros" className="hover:text-white transition-colors">Sobre Nosotros</Link></li>
-                <li><Link href="/en-desarrollo" className="hover:text-white transition-colors">Productos</Link></li>
-                <li><button onClick={openModal} className="hover:text-white transition-colors">Contacto</button></li>
-              </ul>
-            </div>
-
-            {/* Social */}
-            <div>
-              <h4 className="font-bold text-white mb-6">Social</h4>
-              <ul className="space-y-3 text-muted-white">
-                <li><a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
-                <li><a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a></li>
-              </ul>
-            </div>
+          {/* Column 2: Servicios */}
+          <div className="text-center md:text-left">
+            <h4 className="text-white font-bold mb-6 tracking-wider uppercase text-xs">Servicios</h4>
+            <ul className="space-y-4 text-[#94a3b8]">
+              <li><Link href="/en-desarrollo" className="hover:text-accent-cyan transition-colors">Desarrollo Web</Link></li>
+              <li><Link href="/en-desarrollo" className="hover:text-accent-cyan transition-colors">Aplicaciones Móviles</Link></li>
+              <li><Link href="/en-desarrollo" className="hover:text-accent-cyan transition-colors">Consultoría</Link></li>
+            </ul>
           </div>
 
+          {/* Column 3: Empresa */}
+          <div className="text-center md:text-left">
+            <h4 className="text-white font-bold mb-6 tracking-wider uppercase text-xs">Empresa</h4>
+            <ul className="space-y-4 text-[#94a3b8]">
+              <li><Link href="/nosotros" className="hover:text-accent-cyan transition-colors">Sobre Nosotros</Link></li>
+              <li><Link href="/en-desarrollo" className="hover:text-accent-cyan transition-colors">Productos</Link></li>
+              <li><button onClick={openModal} className="hover:text-accent-cyan transition-colors">Contacto</button></li>
+            </ul>
+          </div>
+
+          {/* Column 4: Social */}
+          <div className="text-center md:text-left">
+            <h4 className="text-white font-bold mb-6 tracking-wider uppercase text-xs">Social</h4>
+            <ul className="space-y-4 text-[#94a3b8]">
+              <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors">LinkedIn</a></li>
+              <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors">GitHub</a></li>
+              <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors">Twitter</a></li>
+            </ul>
+          </div>
         </div>
 
-        {/* Copyright Row */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-muted-white text-[10px] md:text-xs tracking-wider px-0">
-          <div className="text-center md:text-left mb-4 md:mb-0">
-            <p>&copy; {new Date().getFullYear()} TWS Tech With Soul. Todos los derechos reservados.</p>
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-4 order-2 md:order-1">
+            <img src="/Isologo.svg" alt="TWS Mini Logo" className="h-5 w-auto opacity-50" />
+            <p className="text-[#64748b] text-xs">
+              &copy; {new Date().getFullYear()} TWS Tech With Soul. Todos los derechos reservados.
+            </p>
           </div>
-          <div className="flex gap-6">
+          
+          <div className="flex gap-8 text-[#64748b] text-xs order-1 md:order-2">
             <Link href="/en-desarrollo" className="hover:text-white transition-colors">Privacidad</Link>
             <Link href="/en-desarrollo" className="hover:text-white transition-colors">Términos</Link>
           </div>
         </div>
-
       </div>
     </footer>
   );

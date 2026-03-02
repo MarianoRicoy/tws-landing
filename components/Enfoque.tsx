@@ -59,11 +59,11 @@ const pillars = [
 
 export default function Enfoque() {
   return (
-    <section className="py-28">
+    <section data-theme="dark" className="py-28 bg-tws-solid">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Así encaramos cada <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">proyecto</span>
+            Cómo Abordamos Cada <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Proyecto</span>
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">

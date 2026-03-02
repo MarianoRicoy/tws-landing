@@ -12,6 +12,7 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
 
   useEffect(() => {
     setIsVisible(false);
@@ -19,6 +20,30 @@ export default function Navbar() {
       setIsVisible(true);
     }, 100);
     return () => clearTimeout(timer);
+  }, [pathname]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const theme = entry.target.getAttribute('data-theme');
+            setIsDarkTheme(theme !== 'light');
+          }
+        });
+      },
+      {
+        rootMargin: '-80px 0px -80% 0px', // Detects theme based on what's under the navbar
+        threshold: 0
+      }
+    );
+
+    const sections = document.querySelectorAll('[data-theme]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
   }, [pathname]);
 
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -83,24 +108,49 @@ export default function Navbar() {
               {/* Logo (Left on mobile, absolute on desktop) */}
               <div className="md:absolute md:left-0 flex items-center">
                 <Link href="/" className="flex items-center group">
-                  <img src="/Isologo.svg" alt="TWS Isologo" className="h-8 w-auto transition-transform duration-300 group-hover:scale-110" />
+                  <img 
+                    src="/Isologo.svg" 
+                    alt="TWS Isologo" 
+                    className={`h-8 w-auto transition-all duration-500 group-hover:scale-110 ${!isDarkTheme ? 'invert brightness-0' : ''}`} 
+                  />
                 </Link>
               </div>
 
               {/* Minimal Desktop Menu (Centered) */}
-              <div className="hidden md:flex items-center gap-6 text-[13px] font-medium tracking-[0.15em] uppercase text-muted-white">
-                <a href="/#servicios" onClick={(e) => handleNavigation(e, '/#servicios')} className="hover:text-white transition-colors cursor-pointer border-b border-transparent hover:border-white pb-0.5">Servicios</a>
-                <span className="text-white/20 font-light text-lg">|</span>
-                <Link href="/en-desarrollo" className="hover:text-white transition-colors border-b border-transparent hover:border-white pb-0.5">Productos</Link>
-                <span className="text-white/20 font-light text-lg">|</span>
-                <Link href="/nosotros" className={`${pathname === '/nosotros' ? 'text-white border-white' : ''} hover:text-white transition-colors border-b border-transparent hover:border-white pb-0.5`}>Nosotros</Link>
-                <span className="text-white/20 font-light text-lg">|</span>
-                <button onClick={openModal} className="hover:text-white transition-colors border-b border-transparent hover:border-white pb-0.5">Contacto</button>
+              <div className={`hidden md:flex items-center gap-6 text-[13px] font-medium tracking-[0.15em] uppercase transition-colors duration-500 ${isDarkTheme ? 'text-muted-white' : 'text-black/70'}`}>
+                <a 
+                  href="/#servicios" 
+                  onClick={(e) => handleNavigation(e, '/#servicios')} 
+                  className={`transition-colors cursor-pointer border-b border-transparent pb-0.5 ${isDarkTheme ? 'hover:text-white hover:border-white' : 'hover:text-black hover:border-black'}`}
+                >
+                  Servicios
+                </a>
+                <span className={`font-light text-lg transition-colors duration-500 ${isDarkTheme ? 'text-white/20' : 'text-black/10'}`}>|</span>
+                <Link 
+                  href="/en-desarrollo" 
+                  className={`transition-colors border-b border-transparent pb-0.5 ${isDarkTheme ? 'hover:text-white hover:border-white' : 'hover:text-black hover:border-black'}`}
+                >
+                  Productos
+                </Link>
+                <span className={`font-light text-lg transition-colors duration-500 ${isDarkTheme ? 'text-white/20' : 'text-black/10'}`}>|</span>
+                <Link 
+                  href="/nosotros" 
+                  className={`transition-colors border-b border-transparent pb-0.5 ${pathname === '/nosotros' ? (isDarkTheme ? 'text-white border-white' : 'text-black border-black') : ''} ${isDarkTheme ? 'hover:text-white hover:border-white' : 'hover:text-black hover:border-black'}`}
+                >
+                  Nosotros
+                </Link>
+                <span className={`font-light text-lg transition-colors duration-500 ${isDarkTheme ? 'text-white/20' : 'text-black/10'}`}>|</span>
+                <button 
+                  onClick={openModal} 
+                  className={`transition-colors border-b border-transparent pb-0.5 ${isDarkTheme ? 'hover:text-white hover:border-white' : 'hover:text-black hover:border-black'}`}
+                >
+                  Contacto
+                </button>
               </div>
 
               {/* Mobile Hamburger Button */}
               <div className="md:hidden">
-                <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white p-2">
+                <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className={`transition-colors duration-500 p-2 ${isDarkTheme ? 'text-white' : 'text-black'}`}>
                   {isMobileMenuOpen ? (
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />

@@ -6,10 +6,7 @@ import { useModal } from '@/contexts/ModalContext';
 export default function Hero() {
   const { openModal } = useModal();
   return (
-    <section className="relative pt-36 pb-20 md:pt-48 md:pb-24">
-      {/* Ambient Glow - Adjusted for Orizon Style (Stronger bottom blue) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 via-transparent to-transparent -z-10"></div>
-      
+    <section data-theme="dark" className="relative pt-36 pb-20 md:pt-48 md:pb-24">
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center text-center space-y-8">
           <p className="text-base text-accent-cyan tracking-widest uppercase font-semibold" style={{ textShadow: '0 0 25px rgba(58, 130, 246, 0.8)' }}>
