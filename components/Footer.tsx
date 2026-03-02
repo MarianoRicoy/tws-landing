@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="flex justify-center md:justify-start md:w-1/4">
             <Link href="/" className="inline-block">
               <span className="text-xl font-bold text-muted-white tracking-tight">
-                Tech With Soul
+                Tech With <span className="bg-clip-text text-transparent bg-gradient-to-r from-muted-white to-accent-cyan/80">Soul</span>
               </span>
             </Link>
           </div>
@@ -47,8 +47,7 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-6 tracking-wider uppercase text-xs">Social</h4>
             <ul className="space-y-4 text-[#94a3b8]">
               <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors">LinkedIn</a></li>
-              <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors">GitHub</a></li>
-              <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors">Twitter</a></li>
+              <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors">Instagram</a></li>
             </ul>
           </div>
         </div>

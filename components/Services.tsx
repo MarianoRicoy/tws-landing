@@ -89,7 +89,9 @@ export default function Services() {
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
           Un Ecosistema <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Híbrido</span>
         </h2>
-        <AnimatedText text={servicesText} className="text-muted-white/80 max-w-2xl mx-auto text-base md:text-lg justify-center" />
+        <p className="text-muted-white/80 max-w-2xl mx-auto text-base md:text-lg">
+          {servicesText}
+        </p>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8">

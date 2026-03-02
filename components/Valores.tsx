@@ -65,7 +65,6 @@ export default function Valores() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Nuestros <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Valores</span>
           </h2>
-          <p className="text-muted-white/80 max-w-xl mx-auto text-base md:text-lg">Los pilares que sostienen cada línea de código que escribimos.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {values.map((value, i) => (

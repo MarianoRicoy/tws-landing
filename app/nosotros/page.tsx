@@ -7,8 +7,8 @@ export default function NosotrosPage() {
   return (
     <>
       <NosotrosHero />
-      <NuestraHistoria />
       <Valores />
+      <NuestraHistoria />
       <DreamTeam />
     </>
   );

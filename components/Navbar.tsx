@@ -117,32 +117,43 @@ export default function Navbar() {
               </div>
 
               {/* Minimal Desktop Menu (Centered) */}
-              <div className={`hidden md:flex items-center gap-6 text-[13px] font-medium tracking-[0.15em] uppercase transition-colors duration-500 ${isDarkTheme ? 'text-muted-white' : 'text-black/70'}`}>
+              <div className={`hidden md:flex items-center gap-10 text-[15px] font-normal transition-colors duration-500 ${isDarkTheme ? 'text-white' : 'text-black'}`}>
+                {pathname !== '/' && (
+                  <>
+                    <Link 
+                      href="/" 
+                      className={`transition-all border-b-2 border-transparent hover:border-white pb-1 ${pathname === '/' ? 'border-white' : ''}`}
+                    >
+                      Inicio
+                    </Link>
+                    <span className={`font-light text-lg transition-colors duration-500 ${isDarkTheme ? 'text-white/20' : 'text-black/10'}`}>|</span>
+                  </>
+                )}
                 <a 
                   href="/#servicios" 
                   onClick={(e) => handleNavigation(e, '/#servicios')} 
-                  className={`transition-colors cursor-pointer border-b border-transparent pb-0.5 ${isDarkTheme ? 'hover:text-white hover:border-white' : 'hover:text-black hover:border-black'}`}
+                  className={`transition-all border-b-2 border-transparent hover:border-white pb-1`}
                 >
                   Servicios
                 </a>
                 <span className={`font-light text-lg transition-colors duration-500 ${isDarkTheme ? 'text-white/20' : 'text-black/10'}`}>|</span>
                 <Link 
                   href="/en-desarrollo" 
-                  className={`transition-colors border-b border-transparent pb-0.5 ${isDarkTheme ? 'hover:text-white hover:border-white' : 'hover:text-black hover:border-black'}`}
+                  className={`transition-all border-b-2 border-transparent hover:border-white pb-1 ${pathname === '/en-desarrollo' ? 'border-white' : ''}`}
                 >
                   Productos
                 </Link>
                 <span className={`font-light text-lg transition-colors duration-500 ${isDarkTheme ? 'text-white/20' : 'text-black/10'}`}>|</span>
                 <Link 
                   href="/nosotros" 
-                  className={`transition-colors border-b border-transparent pb-0.5 ${pathname === '/nosotros' ? (isDarkTheme ? 'text-white border-white' : 'text-black border-black') : ''} ${isDarkTheme ? 'hover:text-white hover:border-white' : 'hover:text-black hover:border-black'}`}
+                  className={`transition-all border-b-2 border-transparent hover:border-white pb-1 ${pathname === '/nosotros' ? 'border-white' : ''}`}
                 >
                   Nosotros
                 </Link>
                 <span className={`font-light text-lg transition-colors duration-500 ${isDarkTheme ? 'text-white/20' : 'text-black/10'}`}>|</span>
                 <button 
                   onClick={openModal} 
-                  className={`transition-colors border-b border-transparent pb-0.5 ${isDarkTheme ? 'hover:text-white hover:border-white' : 'hover:text-black hover:border-black'}`}
+                  className={`transition-all border-b-2 border-transparent hover:border-white pb-1`}
                 >
                   Contacto
                 </button>
@@ -167,11 +178,14 @@ export default function Navbar() {
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
               <div className="absolute top-full left-0 w-full bg-background-dark/95 backdrop-blur-xl border-b border-white/5 md:hidden overflow-hidden">
-                <div className="flex flex-col py-8 px-6 gap-8 text-center text-xs tracking-[0.2em] uppercase font-medium text-muted-white">
+                <div className="flex flex-col py-8 px-6 gap-8 text-center text-xs tracking-[0.2em] font-normal text-white">
+                  {pathname !== '/' && (
+                    <Link href="/" onClick={(e) => handleNavigation(e, '/')} className="hover:text-white transition-colors">Inicio</Link>
+                  )}
                   <a href="/#servicios" onClick={(e) => handleNavigation(e, '/#servicios')} className="hover:text-white transition-colors">Servicios</a>
                   <Link href="/en-desarrollo" onClick={(e) => handleNavigation(e, '/en-desarrollo')} className="hover:text-white transition-colors">Productos</Link>
                   <Link href="/nosotros" onClick={(e) => handleNavigation(e, '/nosotros')} className="hover:text-white transition-colors">Nosotros</Link>
-                  <button onClick={handleContactAndCloseMenu} className="text-accent-cyan font-bold">Contacto</button>
+                  <button onClick={handleContactAndCloseMenu} className="text-white hover:text-white transition-colors">Contacto</button>
                 </div>
               </div>
             )}

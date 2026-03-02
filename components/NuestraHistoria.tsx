@@ -6,7 +6,7 @@ export default function NuestraHistoria() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Nuestra <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Historia</span>
+            Sobre <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Tech With Soul</span>
           </h2>
         </div>
         
@@ -14,16 +14,16 @@ export default function NuestraHistoria() {
           <div className="text-left md:col-span-2">
             <div className="text-white/90 space-y-4 leading-relaxed text-lg font-medium">
               <p>
-                Nos conocimos en un entorno de alto rendimiento. Cuatro perfiles distintos que encontraron una sinergia innegable al enfrentar desafíos técnicos complejos. Entre optimizaciones, despliegues y resolución de problemas críticos, confirmamos que la diversidad de nuestro enfoque era la clave de nuestra solidez como equipo.
+                TWS surge de la sinergia de cuatro perfiles técnicos en un entorno de alto rendimiento. Al enfrentar desafíos complejos, optimizaciones y despliegues críticos, confirmamos que la diversidad de enfoques es nuestra mayor solidez.
               </p>
               <p>
-                Al integrar nuestra experiencia en visión estratégica, arquitectura backend, desarrollo de producto y frontend, fundamos TWS.
+                Integramos experiencia en visión estratégica, arquitectura backend, desarrollo de producto y frontend para crear TWS.
               </p>
               <p>
-                Lo que comenzó como un enfoque compartido se consolidó como una Software Factory + Product Lab. Nuestra misión es clara: construir tecnología con intención. Vamos más allá de la escritura de código o la planificación estratégica para entregar productos escalables, eficientes y que aporten valor real al mercado.
+                Lo que comenzó como un enfoque compartido hoy es una Software Factory + Product Lab con una misión clara: construir tecnología con intención. Superamos la simple escritura de código para entregar productos escalables y eficientes que aporten valor real.
               </p>
               <p>
-                Porque cuando la solidez técnica y la visión de producto se alinean, la innovación deja de ser un concepto para convertirse en soluciones tangibles.
+                Porque cuando la solidez técnica y la visión de producto se alinean, la innovación se convierte en soluciones tangibles.
               </p>
             </div>
           </div>
