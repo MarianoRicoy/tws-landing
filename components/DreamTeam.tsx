@@ -60,7 +60,7 @@ export default function DreamTeam() {
     {
       name: "Rafael Alvarez Lopez",
       role: "Head of Backend",
-      imageSrc: "/DreamTeam/RafaTwspro.jpeg",
+      imageSrc: "/DreamTeam/RafaTwsPro.jpeg",
       description: "Responsable de la arquitectura y robustez técnica de nuestras soluciones. Se especializa en diseñar estructuras backend escalables y seguras que soportan el alto tráfico y las demandas de productos en crecimiento. Su enfoque garantiza que la lógica del negocio funcione con precisión y eficiencia absoluta."
     },
     {
