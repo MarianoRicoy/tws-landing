@@ -155,7 +155,7 @@ export default function SoftwareFactoryPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            className="flex items-center justify-center pt-4"
           >
             <button 
               onClick={openModal}
@@ -163,12 +163,6 @@ export default function SoftwareFactoryPage() {
             >
               Iniciar Proyecto
             </button>
-            <a 
-              href="mailto:hola@techwithsoul.com" 
-              className="px-10 py-4 rounded-md border border-white/10 text-white/80 font-bold text-sm hover:bg-white/5 hover:text-white transition-all text-center w-full sm:w-auto"
-            >
-              Enviar Email
-            </a>
           </motion.div>
         </div>
       </section>
