@@ -69,7 +69,7 @@ const services = [
     title: 'Software Factory',
     description: 'Desarrollamos soluciones tecnológicas de alto impacto para empresas que buscan escalar. Código limpio, arquitectura escalable y entrega ágil.',
     items: ['Desarrollo Web & Mobile (React/Native)', 'Staff Augmentation', 'MVP para Startups'],
-    href: '/en-desarrollo',
+    href: '/servicios/software-factory',
     iconClassName: 'text-white'
   },
   {
@@ -77,7 +77,7 @@ const services = [
     title: 'Product Lab',
     description: 'Nuestra incubadora interna. Detectamos problemas reales y construimos productos SaaS propios para resolverlos. Innovación sin intermediarios.',
     items: ['Incubación de Ideas', 'Desarrollo de Productos Propios', 'Experimentación Continua'],
-    href: '/en-desarrollo',
+    href: '/servicios/product-lab',
     iconClassName: 'text-white'
   }
 ];

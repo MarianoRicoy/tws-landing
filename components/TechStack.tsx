@@ -1,4 +1,5 @@
 import React from 'react';
+import InfiniteMarquee from './InfiniteMarquee';
 
 const technologies = [
   'React',
@@ -8,32 +9,26 @@ const technologies = [
   'PostgreSQL',
   'Node.js',
   'Figma',
+  'AWS',
   'Vercel',
 ];
 
-const TechPill: React.FC<{ name: string }> = ({ name }) => (
-  <div className="text-muted-white px-6 py-2 text-lg">
-    {name}
-  </div>
-);
-
 export default function TechStack() {
-  const extendedTechs = [...technologies, ...technologies]; // Duplicate for seamless loop
-
   return (
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-base text-accent-cyan tracking-widest uppercase font-semibold text-center mb-12" style={{ textShadow: '0 0 15px rgba(58, 130, 246, 0.4)' }}>
+        <h2 className="text-sm font-semibold text-accent-cyan tracking-[0.3em] uppercase text-center mb-12" style={{ textShadow: '0 0 20px rgba(58, 130, 246, 0.4)' }}>
           Tecnologías que impulsan nuestros productos
         </h2>
+        
         <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
-          <div className="flex animate-marquee whitespace-nowrap">
-            {extendedTechs.map((tech, index) => (
-              <div key={index} className="mx-4">
-                <TechPill name={tech} />
-              </div>
+          <InfiniteMarquee speed="30s">
+            {technologies.map((tech, index) => (
+              <span key={index} className="text-2xl md:text-3xl font-bold text-white/40 mx-12 hover:text-accent-cyan transition-colors duration-300">
+                {tech}
+              </span>
             ))}
-          </div>
+          </InfiniteMarquee>
         </div>
       </div>
     </section>
