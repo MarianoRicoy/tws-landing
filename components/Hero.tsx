@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section data-theme="dark" className="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden">
       {/* Subtle background glow behind text */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-white/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-white/[0.02] blur-[100px] rounded-full pointer-events-none z-0"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center text-center space-y-12">
