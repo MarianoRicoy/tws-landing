@@ -147,7 +147,7 @@ export default function ProductLabPage() {
             transition={{ delay: 0.1 }}
             className="text-lg text-muted-white mb-12 max-w-2xl mx-auto font-medium"
           >
-            Estamos constantemente explorando nuevas fronteras tecnológicas. Escribinos para saber más sobre lo que estamos construyendo.
+            te invitamos a descubrir nuestro catálogo de soluciones tecnológicas
           </motion.p>
           
           <motion.div 
@@ -157,12 +157,12 @@ export default function ProductLabPage() {
             transition={{ delay: 0.2 }}
             className="flex items-center justify-center pt-4"
           >
-            <button 
-              onClick={openModal}
+            <Link 
+              href="/en-desarrollo" 
               className="px-10 py-4 rounded-md bg-accent-cyan text-white font-bold text-sm hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-accent-cyan/20 w-full sm:w-auto"
             >
-              Consultar
-            </button>
+              Ver productos
+            </Link>
           </motion.div>
         </div>
       </section>

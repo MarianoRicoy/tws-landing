@@ -117,7 +117,7 @@ export default function SoftwareFactoryPage() {
             className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl"
           >
             <Image
-              src="/sala2.jpeg"
+              src="/sala4.png"
               alt="TWS Software Factory Workspace"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
