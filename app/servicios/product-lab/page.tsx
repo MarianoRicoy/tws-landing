@@ -20,30 +20,59 @@ const cardVariants: Variants = {
   }),
 };
 
-const PillarCard = ({ icon: Icon, title, children, index, step }: { icon: React.ElementType, title: string, children: React.ReactNode, index: number, step?: string }) => (
+const PillarCard = ({ 
+  icon: Icon, 
+  title, 
+  children, 
+  index, 
+  step,
+  points 
+}: { 
+  icon: React.ElementType, 
+  title: string, 
+  children: React.ReactNode, 
+  index: number, 
+  step?: string,
+  points?: string[]
+}) => (
   <motion.div
-    className="group relative bg-surface-dark/40 rounded-2xl p-8 border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(58,130,246,0.1)]"
+    className="group relative bg-surface-dark/40 rounded-2xl p-8 border border-white/10 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-accent-cyan/30 hover:shadow-[0_0_40px_rgba(58,130,246,0.1)] flex flex-col h-full"
     variants={cardVariants}
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true, amount: 0.5 }}
+    viewport={{ once: true, amount: 0.3 }}
     custom={index}
   >
-    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
     {step && (
-      <div className="absolute top-4 right-6 text-4xl font-black text-white/[0.03] italic group-hover:text-accent-cyan/[0.05] transition-colors duration-500">
+      <div className="absolute top-4 right-6 text-5xl font-black text-white/[0.03] italic group-hover:text-accent-cyan/[0.07] transition-colors duration-500 pointer-events-none">
         {step}
       </div>
     )}
     
-    <div className="relative">
-      <div className="w-14 h-14 rounded-lg bg-background-dark border border-white/10 flex items-center justify-center mb-6 group-hover:border-accent-cyan/50 transition-colors duration-300">
+    <div className="relative z-10 flex flex-col h-full">
+      <div className="w-14 h-14 rounded-xl bg-background-dark border border-white/10 flex items-center justify-center mb-8 group-hover:border-accent-cyan/50 transition-colors duration-500">
         <Icon className="w-7 h-7 text-accent-cyan" />
       </div>
-      <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight flex items-center gap-3">
+
+      <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight leading-tight">
         {title}
       </h3>
-      <p className="text-muted-white leading-relaxed text-sm">{children}</p>
+      
+      <p className="text-slate-400 leading-relaxed text-sm mb-8">
+        {children}
+      </p>
+
+      {points && (
+        <div className="mt-auto pt-6 border-t border-white/5 space-y-3">
+          {points.map((point, i) => (
+            <div key={i} className="flex items-start gap-3">
+              <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent-cyan/40" />
+              <p className="text-[13px] text-white/60 font-medium leading-tight">{point}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   </motion.div>
 );
@@ -54,18 +83,33 @@ const pillars = [
     title: 'Discovery & Estrategia',
     step: '01',
     description: 'No empezamos con código, empezamos con preguntas. Validamos la viabilidad técnica y de mercado para asegurar que cada línea de desarrollo tenga un propósito de negocio claro.',
+    points: [
+      'Análisis de viabilidad técnica',
+      'Definición de propuesta de valor',
+      'Roadmap de producto estratégico'
+    ]
   },
   {
     icon: Microscope,
     title: 'Prototipado Ágil',
     step: '02',
-    description: 'Construimos versiones funcionales de alta fidelidad en ciclos cortos. Este enfoque nos permite iterar sobre feedback real antes de comprometer recursos en un escalamiento masivo.',
+    description: 'Construimos versiones funcionales de alta fidelidad en ciclos cortos. Este enfoque nos permite iterar sobre feedback real antes de comprometer recursos masivos.',
+    points: [
+      'Iteraciones rápidas (Sprints)',
+      'Validación con usuarios reales',
+      'Ajuste constante según feedback'
+    ]
   },
   {
     icon: Rocket,
-    title: 'Lanzamiento & Crecimiento',
+    title: 'Lanzamiento & Escalado',
     step: '03',
-    description: 'Desplegamos productos con arquitectura preparada para el tráfico real. Monitoreamos métricas clave y optimizamos el producto basándonos en el comportamiento del usuario final.',
+    description: 'Desplegamos productos con arquitectura preparada para el tráfico real. Monitoreamos métricas clave y optimizamos el producto basado en datos.',
+    points: [
+      'Arquitectura lista para el mercado',
+      'Monitoreo de métricas clave',
+      'Optimización continua de producto'
+    ]
   },
 ];
 
@@ -96,7 +140,7 @@ export default function ProductLabPage() {
             </h1>
             
             <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
-              El Product Lab es nuestra cocina de innovación. Aquí no solo creamos software; incubamos soluciones digitales propias y de partners, diseñadas para ser escalables y atractivas para el mercado.
+              El Product Lab es nuestro ecosistema de innovación. Aquí incubamos soluciones digitales diseñadas para ser escalables, eficientes y con un propósito claro de mercado.
             </p>
           </motion.div>
         </div>
@@ -107,7 +151,14 @@ export default function ProductLabPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pillars.map((pillar, i) => (
-              <PillarCard key={pillar.title} icon={pillar.icon} title={pillar.title} index={i}>
+              <PillarCard 
+                key={pillar.title} 
+                icon={pillar.icon} 
+                title={pillar.title} 
+                index={i}
+                step={pillar.step}
+                points={pillar.points}
+              >
                 {pillar.description}
               </PillarCard>
             ))}
