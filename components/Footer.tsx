@@ -26,9 +26,9 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h4 className="text-white font-bold mb-6 tracking-wider uppercase text-xs">Servicios</h4>
             <ul className="space-y-4 text-[#94a3b8]">
-              <li><Link href="/en-desarrollo" className="hover:text-accent-cyan transition-colors">Desarrollo Web</Link></li>
-              <li><Link href="/en-desarrollo" className="hover:text-accent-cyan transition-colors">Aplicaciones Móviles</Link></li>
-              <li><Link href="/en-desarrollo" className="hover:text-accent-cyan transition-colors">Consultoría</Link></li>
+              <li><Link href="/#servicios" className="hover:text-accent-cyan transition-colors">Desarrollo Web</Link></li>
+              <li><Link href="/#servicios" className="hover:text-accent-cyan transition-colors">Aplicaciones Móviles</Link></li>
+              <li><Link href="/#servicios" className="hover:text-accent-cyan transition-colors">Consultoría</Link></li>
             </ul>
           </div>
 
@@ -46,8 +46,8 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h4 className="text-white font-bold mb-6 tracking-wider uppercase text-xs">Social</h4>
             <ul className="space-y-4 text-[#94a3b8]">
-              <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors">LinkedIn</a></li>
-              <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/company/tech-with-soul" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/tech.with.soul/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-cyan transition-colors">Instagram</a></li>
             </ul>
           </div>
         </div>
