@@ -53,22 +53,20 @@ const PillarCard = ({
         {tags && (
           <div className="relative flex-1 overflow-hidden h-7 mt-2">
             <motion.div 
-              className="flex gap-3 whitespace-nowrap"
-              animate={{ x: [0, -100] }}
+              className="flex gap-8 whitespace-nowrap items-center"
+              animate={{ x: [0, -150] }}
               transition={{ 
-                duration: 10, 
+                duration: 12, 
                 repeat: Infinity, 
                 ease: "linear" 
               }}
             >
-              {[...tags, ...tags].map((tag, i) => (
-                <span key={i} className="text-[9px] font-bold tracking-widest text-slate-400 border border-white/10 px-2.5 py-1 rounded-full uppercase bg-white/5 whitespace-nowrap">
+              {[...tags, ...tags, ...tags].map((tag, i) => (
+                <span key={i} className="text-[11px] font-bold text-white/40 uppercase whitespace-nowrap">
                   {tag}
                 </span>
               ))}
             </motion.div>
-            <div className="absolute inset-y-0 left-0 w-4 bg-gradient-to-r from-[#181C26] to-transparent z-10" />
-            <div className="absolute inset-y-0 right-0 w-4 bg-gradient-to-l from-[#181C26] to-transparent z-10" />
           </div>
         )}
       </div>

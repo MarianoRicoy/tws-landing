@@ -40,7 +40,7 @@ const PillarCard = ({
     variants={cardVariants}
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true, amount: 0.3 }}
+    viewport={{ once: true, amount: 0.1 }}
     custom={index}
   >
     <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
