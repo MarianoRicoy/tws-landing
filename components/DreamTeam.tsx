@@ -13,35 +13,32 @@ const TeamMemberCard = ({ name, role, imageSrc, onClick }: { name: string, role:
     onClick={onClick}
   >
     {/* Card Container with Portrait Aspect Ratio */}
-    <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10 bg-surface-dark transition-all duration-500 group-hover:border-accent-cyan/30 shadow-2xl">
+    <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-surface-dark transition-all duration-500 group-hover:border-accent-cyan/20">
       {/* Photo with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={imageSrc}
           alt={name}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        {/* Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-90" />
+        {/* Gradient Overlay for Text Readability - More subtle */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/10 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-80" />
       </div>
 
       {/* Content Block (Inside Card) */}
-      <div className="absolute inset-x-0 bottom-0 p-6 z-10 flex flex-col items-start text-left">
-        <h3 className="text-xl font-bold text-white mb-1 transition-all duration-300 group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-accent-cyan/80">
+      <div className="absolute inset-x-0 bottom-0 p-5 z-10 flex flex-col items-start text-left">
+        <h3 className="text-lg font-bold text-white mb-0.5 transition-all duration-300 group-hover:text-accent-cyan">
           {name}
         </h3>
-        <p className="text-sm font-medium text-slate-400 tracking-wide uppercase">
+        <p className="text-[10px] font-black tracking-[0.2em] text-slate-500 uppercase">
           {role}
         </p>
       </div>
 
-      {/* Interaction Icon (+) */}
-      <div className="absolute bottom-6 right-6 z-20 w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
-        <span className="text-white text-xl font-light">+</span>
+      {/* Interaction Icon (+) - Minimalist */}
+      <div className="absolute top-4 right-4 z-20 w-6 h-6 rounded-full bg-white/5 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-y-2 group-hover:translate-y-0">
+        <span className="text-white text-xs font-light">+</span>
       </div>
-      
-      {/* Metallic Border Effect on Hover */}
-      <div className="absolute inset-0 border-2 border-accent-cyan/0 rounded-xl transition-all duration-500 group-hover:border-accent-cyan/20 pointer-events-none" />
     </div>
   </motion.div>
 );
@@ -92,15 +89,26 @@ export default function DreamTeam() {
     setSelectedMember(null);
   };
   return (
-    <section data-theme="dark" className="py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+    <section data-theme="dark" className="py-24 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-20 flex flex-col items-center">
+          <div className="flex items-center gap-2 mb-4">
+            <h2 className="text-sm font-black tracking-[0.3em] text-accent-cyan uppercase" style={{ textShadow: '0 0 25px rgba(58, 130, 246, 0.8)' }}>
+              Equipo
+            </h2>
+            <img 
+              src="/Isologo.svg" 
+              alt="TWS Isologo" 
+              className="h-4 w-auto brightness-0 invert [filter:sepia(100%)_hue-rotate(190deg)_saturate(500%)]"
+              style={{ filter: 'drop-shadow(0 0 10px rgba(58, 130, 246, 0.8))' }}
+            />
+          </div>
+          <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
             Dirección y <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Estrategia</span>
           </h1>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {teamMembers.map((member, index) => (
             <TeamMemberCard
               key={index}

@@ -30,7 +30,7 @@ export default function NuestraHistoria() {
           <div className="md:col-span-3">
             <div className="relative w-full h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <Image
-                src="/oficinastws.png"
+                src="/oficinasTwsSinGente.png"
                 alt="Oficinas TWS"
                 fill
                 className="object-cover"
