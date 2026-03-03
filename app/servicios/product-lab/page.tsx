@@ -25,14 +25,12 @@ const PillarCard = ({
   title, 
   children, 
   index, 
-  step,
   points 
 }: { 
   icon: React.ElementType, 
   title: string, 
   children: React.ReactNode, 
   index: number, 
-  step?: string,
   points?: string[]
 }) => (
   <motion.div
@@ -44,11 +42,6 @@ const PillarCard = ({
     custom={index}
   >
     <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-    {step && (
-      <div className="absolute top-4 right-6 text-5xl font-black text-white/[0.03] italic group-hover:text-accent-cyan/[0.07] transition-colors duration-500 pointer-events-none">
-        {step}
-      </div>
-    )}
     
     <div className="relative z-10 flex flex-col h-full">
       <div className="w-14 h-14 rounded-xl bg-background-dark border border-white/10 flex items-center justify-center mb-8 group-hover:border-accent-cyan/50 transition-colors duration-500">
@@ -81,7 +74,6 @@ const pillars = [
   {
     icon: Lightbulb,
     title: 'Discovery & Estrategia',
-    step: '01',
     description: 'No empezamos con código, empezamos con preguntas. Validamos la viabilidad técnica y de mercado para asegurar que cada línea de desarrollo tenga un propósito de negocio claro.',
     points: [
       'Análisis de viabilidad técnica',
@@ -92,7 +84,6 @@ const pillars = [
   {
     icon: Microscope,
     title: 'Prototipado Ágil',
-    step: '02',
     description: 'Construimos versiones funcionales de alta fidelidad en ciclos cortos. Este enfoque nos permite iterar sobre feedback real antes de comprometer recursos masivos.',
     points: [
       'Iteraciones rápidas (Sprints)',
@@ -103,7 +94,6 @@ const pillars = [
   {
     icon: Rocket,
     title: 'Lanzamiento & Escalado',
-    step: '03',
     description: 'Desplegamos productos con arquitectura preparada para el tráfico real. Monitoreamos métricas clave y optimizamos el producto basado en datos.',
     points: [
       'Arquitectura lista para el mercado',
@@ -156,7 +146,6 @@ export default function ProductLabPage() {
                 icon={pillar.icon} 
                 title={pillar.title} 
                 index={i}
-                step={pillar.step}
                 points={pillar.points}
               >
                 {pillar.description}
@@ -166,7 +155,7 @@ export default function ProductLabPage() {
         </div>
       </section>
 
-      {/* Featured Image Section */}
+      {/* Featured Image Section - Interactive Hover Fade */}
       <section className="py-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -174,16 +163,33 @@ export default function ProductLabPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl"
+            className="group relative aspect-[21/9] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl cursor-pointer"
           >
+            {/* Base Image (Living Normal) */}
             <Image
               src="/fotoLiving.png"
               alt="TWS Product Lab Environment"
               fill
-              className="object-cover transition-transform duration-700 hover:scale-105"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background-dark/60 to-transparent" />
+            
+            {/* Hover Image (Living con Gente) */}
+            <motion.div
+              className="absolute inset-0 z-10"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
+              <Image
+                src="/LivingConGente.png"
+                alt="TWS Product Lab Team"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </motion.div>
+
+            <div className="absolute inset-0 bg-gradient-to-t from-background-dark/60 to-transparent z-20 pointer-events-none" />
           </motion.div>
         </div>
       </section>

@@ -182,7 +182,7 @@ export default function SoftwareFactoryPage() {
         </div>
       </section>
 
-      {/* Featured Image Section */}
+      {/* Featured Image Section - Interactive Hover Fade */}
       <section className="py-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -190,16 +190,33 @@ export default function SoftwareFactoryPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl"
+            className="group relative aspect-[21/9] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl cursor-pointer"
           >
+            {/* Base Image (Sala Vacia) */}
             <Image
               src="/sala4.png"
               alt="TWS Software Factory Workspace"
               fill
-              className="object-cover transition-transform duration-700 hover:scale-105"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background-dark/60 to-transparent" />
+            
+            {/* Hover Image (Gente Trabajando) */}
+            <motion.div
+              className="absolute inset-0 z-10"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
+              <Image
+                src="/MeetandWork.png"
+                alt="TWS Software Factory Team"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </motion.div>
+
+            <div className="absolute inset-0 bg-gradient-to-t from-background-dark/60 to-transparent z-20 pointer-events-none" />
           </motion.div>
         </div>
       </section>
