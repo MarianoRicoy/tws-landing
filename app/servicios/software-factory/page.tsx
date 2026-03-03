@@ -20,24 +20,65 @@ const cardVariants: Variants = {
   }),
 };
 
-const PillarCard = ({ icon: Icon, title, children, index }: { icon: React.ElementType, title: string, children: React.ReactNode, index: number }) => (
+const PillarCard = ({ 
+  icon: Icon, 
+  title, 
+  children, 
+  index, 
+  tags, 
+  points 
+}: { 
+  icon: React.ElementType, 
+  title: string, 
+  children: React.ReactNode, 
+  index: number, 
+  tags?: string[],
+  points?: string[]
+}) => (
   <motion.div
-    className="group relative bg-surface-dark/40 rounded-2xl p-8 border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2"
+    className="group relative bg-surface-dark/40 rounded-2xl p-8 border border-white/10 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-accent-cyan/30 hover:shadow-[0_0_40px_rgba(58,130,246,0.1)] flex flex-col h-full"
     variants={cardVariants}
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true, amount: 0.5 }}
+    viewport={{ once: true, amount: 0.3 }}
     custom={index}
   >
-    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-    <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent-cyan/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
     
-    <div className="relative">
-      <div className="w-14 h-14 rounded-lg bg-background-dark border border-white/10 flex items-center justify-center mb-6 group-hover:border-accent-cyan/50 transition-colors duration-300">
-        <Icon className="w-7 h-7 text-accent-cyan" />
+    <div className="relative z-10 flex flex-col h-full">
+      <div className="flex justify-between items-start mb-8">
+        <div className="w-14 h-14 rounded-xl bg-background-dark border border-white/10 flex items-center justify-center group-hover:border-accent-cyan/50 transition-colors duration-500">
+          <Icon className="w-7 h-7 text-accent-cyan" />
+        </div>
+        {tags && (
+          <div className="flex flex-wrap gap-2 justify-end max-w-[150px]">
+            {tags.map((tag) => (
+              <span key={tag} className="text-[9px] font-bold tracking-widest text-accent-cyan/70 border border-accent-cyan/20 px-2.5 py-1 rounded-full uppercase bg-accent-cyan/5">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
-      <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight">{title}</h3>
-      <p className="text-muted-white leading-relaxed text-sm">{children}</p>
+
+      <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight leading-tight">
+        {title}
+      </h3>
+      
+      <p className="text-slate-400 leading-relaxed text-sm mb-8">
+        {children}
+      </p>
+
+      {points && (
+        <div className="mt-auto pt-6 border-t border-white/5 space-y-3">
+          {points.map((point, i) => (
+            <div key={i} className="flex items-start gap-3">
+              <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent-cyan/40" />
+              <p className="text-[13px] text-white/60 font-medium leading-tight">{point}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   </motion.div>
 );
@@ -45,18 +86,36 @@ const PillarCard = ({ icon: Icon, title, children, index }: { icon: React.Elemen
 const pillars = [
   {
     icon: Layout,
-    title: 'Desarrollo Web & Mobile',
-    description: 'Construimos interfaces modernas y escalables utilizando React y React Native. Enfoque en performance, accesibilidad y experiencia de usuario excepcional.',
+    title: 'Presencia Digital de Alto Impacto',
+    tags: ['Web', 'Mobile', 'UI/UX'],
+    description: 'Creamos plataformas web y aplicaciones móviles que no solo se ven bien, sino que funcionan a la perfección. Diseñamos experiencias pensadas para que tus clientes naveguen con facilidad y tu negocio pueda escalar sin límites técnicos.',
+    points: [
+      'Experiencia de usuario (UX) fluida',
+      'Velocidad de carga optimizada',
+      'Adaptable a cualquier dispositivo'
+    ]
   },
   {
     icon: Users,
-    title: 'Staff Augmentation',
-    description: 'Integramos talento técnico senior en tu equipo actual. Amplía tu capacidad de desarrollo con ingenieros que comparten tu cultura y objetivos.',
+    title: 'Equipos Expertos a tu Medida',
+    tags: ['Senior', 'Agile', 'DevOps'],
+    description: 'Si ya tienes un proyecto en marcha pero necesitas más potencia de fuego, te brindamos profesionales senior que se integran a tu equipo actual. Es la forma más rápida de acelerar tus desarrollos con el respaldo de ingenieros que entienden tus objetivos.',
+    points: [
+      'Integración inmediata al equipo',
+      'Reducción de tiempos de entrega',
+      'Experiencia técnica comprobada'
+    ]
   },
   {
     icon: Rocket,
-    title: 'MVP para Startups',
-    description: 'Transformamos ideas en productos mínimos viables en tiempo récord. Validamos tu modelo de negocio con arquitectura sólida desde el primer día.',
+    title: 'De la Idea al Producto Real',
+    tags: ['Startup', 'MVP', 'Scale'],
+    description: 'Ideal para startups que necesitan validar su negocio rápido. Construimos una primera versión sólida de tu producto para que puedas lanzarla al mercado, atraer usuarios y obtener inversión, asegurando que los cimientos técnicos sean los correctos.',
+    points: [
+      'Lanzamiento rápido al mercado',
+      'Arquitectura sólida y escalable',
+      'Listo para rondas de inversión'
+    ]
   },
 ];
 
@@ -83,11 +142,11 @@ export default function SoftwareFactoryPage() {
             </p>
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-              Tu visión de negocio, <br /> respaldada por <span className="text-accent-cyan">arquitectura de alto nivel</span>
+              Ingeniería de Software <br /> para <span className="text-accent-cyan text-glow">Scale-ups</span>
             </h1>
             
-            <p className="text-lg text-muted-white max-w-3xl mx-auto leading-relaxed font-medium">
-              Construimos plataformas robustas y escalables que se adaptan al crecimiento de tu empresa. Combinamos excelencia técnica con agilidad operativa.
+            <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
+              Transformamos la complejidad técnica en ventaja competitiva. Nuestro enfoque de Software Factory combina la excelencia artesanal del código con procesos industriales de entrega continua.
             </p>
           </motion.div>
         </div>
@@ -98,7 +157,14 @@ export default function SoftwareFactoryPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pillars.map((pillar, i) => (
-              <PillarCard key={pillar.title} icon={pillar.icon} title={pillar.title} index={i}>
+              <PillarCard 
+                key={pillar.title} 
+                icon={pillar.icon} 
+                title={pillar.title} 
+                index={i}
+                tags={pillar.tags}
+                points={pillar.points}
+              >
                 {pillar.description}
               </PillarCard>
             ))}
