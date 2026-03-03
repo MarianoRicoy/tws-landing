@@ -40,23 +40,35 @@ const PillarCard = ({
     variants={cardVariants}
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true, amount: 0.3 }}
+    viewport={{ once: true, amount: 0.1 }}
     custom={index}
   >
     <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
     
     <div className="relative z-10 flex flex-col h-full">
-      <div className="flex justify-between items-start mb-8">
-        <div className="w-14 h-14 rounded-xl bg-background-dark border border-white/10 flex items-center justify-center group-hover:border-accent-cyan/50 transition-colors duration-500">
+      <div className="flex justify-between items-start mb-8 gap-4">
+        <div className="w-14 h-14 shrink-0 rounded-xl bg-background-dark border border-white/10 flex items-center justify-center group-hover:border-accent-cyan/50 transition-colors duration-500">
           <Icon className="w-7 h-7 text-accent-cyan" />
         </div>
         {tags && (
-          <div className="flex flex-wrap gap-2 justify-end max-w-[150px]">
-            {tags.map((tag) => (
-              <span key={tag} className="text-[9px] font-bold tracking-widest text-accent-cyan/70 border border-accent-cyan/20 px-2.5 py-1 rounded-full uppercase bg-accent-cyan/5">
-                {tag}
-              </span>
-            ))}
+          <div className="relative flex-1 overflow-hidden h-7 mt-2">
+            <motion.div 
+              className="flex gap-3 whitespace-nowrap"
+              animate={{ x: [0, -100] }}
+              transition={{ 
+                duration: 10, 
+                repeat: Infinity, 
+                ease: "linear" 
+              }}
+            >
+              {[...tags, ...tags].map((tag, i) => (
+                <span key={i} className="text-[9px] font-bold tracking-widest text-slate-400 border border-white/10 px-2.5 py-1 rounded-full uppercase bg-white/5 whitespace-nowrap">
+                  {tag}
+                </span>
+              ))}
+            </motion.div>
+            <div className="absolute inset-y-0 left-0 w-4 bg-gradient-to-r from-[#181C26] to-transparent z-10" />
+            <div className="absolute inset-y-0 right-0 w-4 bg-gradient-to-l from-[#181C26] to-transparent z-10" />
           </div>
         )}
       </div>
