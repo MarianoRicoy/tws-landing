@@ -88,6 +88,19 @@ export default function Navbar() {
     }
   };
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <AnimatePresence mode="wait">
       {isVisible && (
@@ -107,7 +120,11 @@ export default function Navbar() {
               
               {/* Logo (Left on mobile, absolute on desktop) */}
               <div className="md:absolute md:left-0 flex items-center">
-                <Link href="/" className="flex items-center group">
+                <Link 
+                  href="/" 
+                  className="flex items-center group"
+                  onClick={handleLogoClick}
+                >
                   <img 
                     src="/Isologo.svg" 
                     alt="TWS Isologo" 
@@ -178,9 +195,7 @@ export default function Navbar() {
             {isMobileMenuOpen && (
               <div className="fixed inset-x-0 top-[90px] mx-6 rounded-2xl bg-background-dark/95 backdrop-blur-xl border border-white/10 md:hidden overflow-hidden shadow-2xl z-50">
                 <div className="flex flex-col py-8 px-6 gap-6 text-center text-[11px] tracking-[0.2em] font-bold text-white uppercase">
-                  {pathname !== '/' && (
-                    <Link href="/" onClick={(e) => handleNavigation(e, '/')} className="hover:text-accent-cyan transition-colors">Inicio</Link>
-                  )}
+                  <Link href="/" onClick={handleLogoClick} className="hover:text-accent-cyan transition-colors">Inicio</Link>
                   <a href="/#servicios" onClick={(e) => handleNavigation(e, '/#servicios')} className="hover:text-accent-cyan transition-colors">Servicios</a>
                   <Link href="/en-desarrollo" onClick={(e) => handleNavigation(e, '/en-desarrollo')} className="hover:text-accent-cyan transition-colors">Productos</Link>
                   <Link href="/nosotros" onClick={(e) => handleNavigation(e, '/nosotros')} className="hover:text-accent-cyan transition-colors">Nosotros</Link>
