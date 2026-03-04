@@ -24,15 +24,15 @@ export default function Hero() {
             Fusionamos la ingeniería de una agencia de desarrollo con la visión de una incubadora de productos. Transformamos ideas complejas en soluciones digitales con alma.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4 w-full sm:w-auto">
             <button 
               onClick={openModal}
-              className="px-10 py-4 rounded-md border border-white/10 text-white/80 font-bold text-sm hover:bg-accent-cyan hover:text-white hover:border-accent-cyan hover:shadow-lg hover:shadow-accent-cyan/20 transition-all hover:scale-105 active:scale-95 text-center">
+              className="px-10 py-4 rounded-md bg-accent-cyan sm:bg-transparent border border-accent-cyan sm:border-white/10 text-white sm:text-white/80 font-bold text-sm hover:bg-accent-cyan hover:text-white hover:border-accent-cyan hover:shadow-lg hover:shadow-accent-cyan/20 transition-all hover:scale-105 active:scale-95 text-center w-full sm:w-auto shadow-lg shadow-accent-cyan/20 sm:shadow-none">
               Agendar Reunión
             </button>
             <button 
               onClick={openModal}
-              className="px-10 py-4 rounded-md border border-white/10 text-white/80 font-bold text-sm hover:bg-accent-cyan hover:text-white hover:border-accent-cyan hover:shadow-lg hover:shadow-accent-cyan/20 transition-all hover:scale-105 active:scale-95 text-center">
+              className="px-10 py-4 rounded-md border border-white/10 text-white/80 font-bold text-sm hover:bg-accent-cyan hover:text-white hover:border-accent-cyan hover:shadow-lg hover:shadow-accent-cyan/20 transition-all hover:scale-105 active:scale-95 text-center w-full sm:w-auto">
               Solicitar Presupuesto
             </button>
           </div>
