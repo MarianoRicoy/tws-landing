@@ -27,12 +27,12 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
             <button 
               onClick={openModal}
-              className="px-10 py-4 rounded-md bg-accent-cyan text-white font-bold text-sm hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-accent-cyan/20">
+              className="px-10 py-4 rounded-md border border-white/10 text-white/80 font-bold text-sm hover:bg-accent-cyan hover:text-white hover:border-accent-cyan hover:shadow-lg hover:shadow-accent-cyan/20 transition-all hover:scale-105 active:scale-95 text-center">
               Agendar Reunión
             </button>
             <button 
               onClick={openModal}
-              className="px-10 py-4 rounded-md border border-white/10 text-white/80 font-bold text-sm hover:bg-white/5 hover:text-white transition-all text-center">
+              className="px-10 py-4 rounded-md border border-white/10 text-white/80 font-bold text-sm hover:bg-accent-cyan hover:text-white hover:border-accent-cyan hover:shadow-lg hover:shadow-accent-cyan/20 transition-all hover:scale-105 active:scale-95 text-center">
               Solicitar Presupuesto
             </button>
           </div>
