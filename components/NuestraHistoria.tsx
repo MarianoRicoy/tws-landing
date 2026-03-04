@@ -28,12 +28,12 @@ export default function NuestraHistoria() {
             </div>
           </div>
           <div className="md:col-span-3">
-            <div className="relative w-full h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+            <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <Image
                 src="/oficinasTwsSinGente.png"
                 alt="Oficinas TWS"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
               />
             </div>
           </div>
