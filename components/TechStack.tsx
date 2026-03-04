@@ -17,7 +17,7 @@ export default function TechStack() {
   return (
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-xs md:text-sm font-semibold text-accent-cyan tracking-[0.3em] uppercase text-center mb-12" style={{ textShadow: '0 0 20px rgba(58, 130, 246, 0.4)' }}>
+        <h2 className="text-xs md:text-sm font-semibold text-accent-cyan tracking-[0.3em] uppercase text-center mb-12" style={{ textShadow: '0 0 25px rgba(58, 130, 246, 0.8)' }}>
           Tecnologías que impulsan nuestros productos
         </h2>
         
