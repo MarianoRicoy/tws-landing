@@ -28,8 +28,8 @@ const TeamMemberCard = ({ name, role, imageSrc, onClick }: { name: string, role:
 
       {/* Plus Indicator */}
       <div className="absolute top-4 right-4 z-20">
-        <div className="w-6 h-6 rounded-full border border-accent-cyan/30 flex items-center justify-center transition-all duration-300 md:opacity-0 md:group-hover:opacity-100 group-hover:bg-accent-cyan/20 group-hover:border-accent-cyan">
-          <Plus size={14} className="text-accent-cyan transition-colors duration-300 group-hover:text-white" strokeWidth={2.5} />
+        <div className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-accent-cyan/20 group-hover:border-accent-cyan">
+          <Plus size={14} className="text-white transition-colors duration-300" strokeWidth={2.5} />
         </div>
       </div>
 
