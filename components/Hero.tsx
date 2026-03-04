@@ -17,7 +17,7 @@ export default function Hero() {
           </p>
 
           <h1 className="text-[clamp(2.5rem,8vw,5rem)] md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white leading-[1.1] max-w-5xl">
-            Tecnología con <span className="text-accent-cyan">Propósito</span>
+            Tecnología con <span className="text-accent-cyan" style={{ textShadow: '0 0 30px rgba(58, 130, 246, 0.6)' }}>Propósito</span>
           </h1>
           
           <p className="text-lg md:text-xl text-slate-400 max-w-xl mx-auto leading-relaxed font-medium">

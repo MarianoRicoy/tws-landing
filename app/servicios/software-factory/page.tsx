@@ -152,7 +152,7 @@ export default function SoftwareFactoryPage() {
             </p>
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-              Ingeniería de Software <br /> para <span className="text-accent-cyan text-glow">Scale-ups</span>
+              Ingeniería de Software <br /> para <span className="text-accent-cyan" style={{ textShadow: '0 0 30px rgba(58, 130, 246, 0.6)' }}>Scale-ups</span>
             </h1>
             
             <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
