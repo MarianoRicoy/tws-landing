@@ -223,12 +223,12 @@ export default function ProductLabPage() {
             transition={{ delay: 0.2 }}
             className="flex items-center justify-center pt-4"
           >
-            <Link 
-              href="/en-desarrollo" 
-              className="px-10 py-4 rounded-md bg-accent-cyan text-white font-bold text-sm hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-accent-cyan/20 w-full sm:w-auto"
+            <button 
+              onClick={openModal}
+              className="px-10 py-4 rounded-md bg-accent-cyan text-white font-bold text-sm hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-md shadow-accent-cyan/10 w-full sm:w-auto"
             >
-              Ver productos
-            </Link>
+              Iniciar Proyecto
+            </button>
           </motion.div>
         </div>
       </section>

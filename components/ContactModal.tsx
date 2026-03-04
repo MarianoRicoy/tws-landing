@@ -86,7 +86,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               <div className="flex justify-center pb-4 md:pb-0">
                 <button
                   type="submit"
-                  className="w-full md:w-auto py-4 px-10 bg-accent-cyan hover:opacity-90 rounded-xl text-white font-bold transition-all text-base shadow-lg shadow-accent-cyan/20 hover:-translate-y-0.5"
+                  disabled={false}
+                  className="w-full bg-accent-cyan text-white font-bold py-4 rounded-lg hover:opacity-90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-md shadow-accent-cyan/10 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   Enviar Mensaje
                 </button>

@@ -14,11 +14,11 @@ export default function CallToAction() {
         <p className="text-muted-white/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
           Conversemos sobre cómo TWS puede impulsar su crecimiento con soluciones tecnológicas de alto impacto.
         </p>
-        <button
+        <button 
           onClick={openModal}
-          className="px-10 py-4 rounded-md bg-accent-cyan text-white font-bold text-base shadow-lg shadow-accent-cyan/10 hover:bg-opacity-90 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent-cyan/20 transition-all duration-300"
+          className="px-10 py-4 rounded-md bg-accent-cyan text-white font-bold text-sm hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-md shadow-accent-cyan/10 w-full sm:w-auto"
         >
-          Solicitar asesoramiento
+          Agendar Reunión
         </button>
       </div>
     </section>
