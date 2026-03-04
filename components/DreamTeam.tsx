@@ -14,7 +14,7 @@ const TeamMemberCard = ({ name, role, imageSrc, onClick }: { name: string, role:
     onClick={onClick}
   >
     {/* Card Container with Portrait Aspect Ratio */}
-    <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-surface-dark transition-all duration-500 group-hover:border-accent-cyan/30 group-hover:bg-white/[0.03]">
+    <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-surface-dark transition-all duration-500 md:group-hover:border-accent-cyan/30 md:group-hover:bg-white/[0.03] active:bg-white/[0.05] active:border-accent-cyan/40">
       {/* Photo with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -27,7 +27,7 @@ const TeamMemberCard = ({ name, role, imageSrc, onClick }: { name: string, role:
       </div>
 
       {/* Chevron Indicator */}
-      <div className="absolute top-4 right-4 text-accent-cyan opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0 z-20">
+      <div className="absolute top-4 right-4 text-accent-cyan opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 transform translate-x-0 md:translate-x-[-10px] md:group-hover:translate-x-0 z-20">
         <ChevronRight size={24} strokeWidth={2.5} />
       </div>
 
@@ -41,7 +41,7 @@ const TeamMemberCard = ({ name, role, imageSrc, onClick }: { name: string, role:
         {name}
       </h3>
       <div className="relative w-full overflow-hidden h-4">
-        <div className="flex gap-8 whitespace-nowrap items-center group-hover:hidden">
+        <div className="flex gap-8 whitespace-nowrap items-center md:group-hover:hidden">
           <span className="text-[10px] font-black tracking-[0.2em] text-slate-500 uppercase whitespace-nowrap">
             {role}
           </span>
@@ -54,7 +54,7 @@ const TeamMemberCard = ({ name, role, imageSrc, onClick }: { name: string, role:
             ease: "linear",
             repeatDelay: 0
           }}
-          className="hidden group-hover:flex gap-8 whitespace-nowrap items-center"
+          className="hidden md:group-hover:flex gap-8 whitespace-nowrap items-center"
         >
           {[0, 1, 2, 3].map((i) => (
             <span key={i} className="text-[10px] font-black tracking-[0.2em] text-slate-500 uppercase whitespace-nowrap">

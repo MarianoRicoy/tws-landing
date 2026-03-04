@@ -32,14 +32,15 @@ const ServiceCard = ({ icon: Icon, title, description, items, href, index, iconC
 }) => (
   <Link href={href} passHref>
     <motion.div
-      className="group relative h-full bg-surface-dark/40 rounded-2xl p-8 border border-white/10 overflow-hidden transition-all duration-300 hover:bg-white/[0.03] hover:border-accent-cyan/30 hover:-translate-y-2"
+      className="group relative h-full bg-surface-dark/40 rounded-2xl p-8 border border-white/10 overflow-hidden transition-all duration-300 md:hover:bg-white/[0.03] md:hover:border-accent-cyan/30 md:hover:-translate-y-2 active:bg-white/[0.05] active:border-accent-cyan/40"
+      variants={cardVariants}
     >
       {/* Decorative Gradient and Light */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent-cyan/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       
       {/* Chevron Indicator */}
-      <div className="absolute top-8 right-8 text-accent-cyan opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
+      <div className="absolute top-8 right-8 text-accent-cyan opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 transform translate-x-0 md:translate-x-[-10px] md:group-hover:translate-x-0">
         <ChevronRight size={24} strokeWidth={2.5} />
       </div>
 
