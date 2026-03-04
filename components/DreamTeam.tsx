@@ -1,5 +1,6 @@
 'use client';
 
+import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -13,7 +14,7 @@ const TeamMemberCard = ({ name, role, imageSrc, onClick }: { name: string, role:
     onClick={onClick}
   >
     {/* Card Container with Portrait Aspect Ratio */}
-    <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-surface-dark transition-all duration-500 group-hover:border-accent-cyan/20">
+    <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-surface-dark transition-all duration-500 group-hover:border-accent-cyan/30 group-hover:bg-white/[0.03]">
       {/* Photo with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -22,23 +23,26 @@ const TeamMemberCard = ({ name, role, imageSrc, onClick }: { name: string, role:
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         {/* Gradient Overlay for Text Readability - More subtle */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/10 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background-dark/40 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40" />
       </div>
 
-      {/* Content Block (Inside Card) */}
-      <div className="absolute inset-x-0 bottom-0 p-5 z-10 flex flex-col items-start text-left">
-        <h3 className="text-lg font-bold text-white mb-0.5 transition-all duration-300 group-hover:text-accent-cyan">
-          {name}
-        </h3>
-        <p className="text-[10px] font-black tracking-[0.2em] text-slate-500 uppercase">
-          {role}
-        </p>
+      {/* Chevron Indicator */}
+      <div className="absolute top-4 right-4 text-accent-cyan opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0 z-20">
+        <ChevronRight size={24} strokeWidth={2.5} />
       </div>
 
-      {/* Interaction Icon (+) - Minimalist */}
-      <div className="absolute top-4 right-4 z-20 w-6 h-6 rounded-full bg-white/5 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-y-2 group-hover:translate-y-0">
-        <span className="text-white text-xs font-light">+</span>
-      </div>
+      {/* Decorative Gradient Light */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+    </div>
+
+    {/* Content Block (Outside Card) */}
+    <div className="mt-4 flex flex-col items-start text-left px-1">
+      <h3 className="text-lg font-bold text-white mb-0.5 transition-all duration-300 group-hover:text-accent-cyan">
+        {name}
+      </h3>
+      <p className="text-[10px] font-black tracking-[0.2em] text-slate-500 uppercase">
+        {role}
+      </p>
     </div>
   </motion.div>
 );
