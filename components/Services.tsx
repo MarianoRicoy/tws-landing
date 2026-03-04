@@ -33,11 +33,6 @@ const ServiceCard = ({ icon: Icon, title, description, items, href, index, iconC
   <Link href={href} passHref>
     <motion.div
       className="group relative h-full bg-surface-dark/40 rounded-2xl p-8 border border-white/10 overflow-hidden transition-all duration-300 hover:bg-white/[0.03] hover:border-accent-cyan/30 hover:-translate-y-2"
-      variants={cardVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.5 }}
-      custom={index}
     >
       {/* Decorative Gradient and Light */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
