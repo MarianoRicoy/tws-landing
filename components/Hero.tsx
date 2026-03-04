@@ -17,7 +17,7 @@ export default function Hero() {
           </p>
 
           <h1 className="text-[clamp(2.5rem,8vw,5rem)] md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white leading-[1.1] max-w-5xl">
-            Tecnología con <span className="text-accent-cyan" style={{ textShadow: '0 0 20px rgba(58, 130, 246, 0.4)' }}>Propósito</span>
+            Tecnología con <span className="text-accent-cyan">Propósito</span>
           </h1>
           
           <p className="text-lg md:text-xl text-slate-400 max-w-xl mx-auto leading-relaxed font-medium">
@@ -28,13 +28,13 @@ export default function Hero() {
             <button 
               onClick={openModal}
               className="px-10 py-4 rounded-md bg-accent-cyan text-white font-bold text-sm hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-accent-cyan/20">
-              Iniciar Proyecto
+              Agendar Reunión
             </button>
-            <Link 
-              href="/en-desarrollo"
+            <button 
+              onClick={openModal}
               className="px-10 py-4 rounded-md border border-white/10 text-white/80 font-bold text-sm hover:bg-white/5 hover:text-white transition-all text-center">
-              Ver Productos
-            </Link>
+              Solicitar Presupuesto
+            </button>
           </div>
         </div>
       </div>
