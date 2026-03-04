@@ -41,6 +41,11 @@ const TeamMemberCard = ({ name, role, imageSrc, onClick }: { name: string, role:
         {name}
       </h3>
       <div className="relative w-full overflow-hidden h-4">
+        <div className="flex gap-8 whitespace-nowrap items-center group-hover:hidden">
+          <span className="text-[10px] font-black tracking-[0.2em] text-slate-500 uppercase whitespace-nowrap">
+            {role}
+          </span>
+        </div>
         <motion.div
           animate={{ x: [0, -200] }}
           transition={{ 
@@ -49,10 +54,7 @@ const TeamMemberCard = ({ name, role, imageSrc, onClick }: { name: string, role:
             ease: "linear",
             repeatDelay: 0
           }}
-          className="flex gap-8 whitespace-nowrap items-center group-hover:[animation-play-state:running]"
-          style={{ 
-            animationPlayState: 'paused'
-          }}
+          className="hidden group-hover:flex gap-8 whitespace-nowrap items-center"
         >
           {[0, 1, 2, 3].map((i) => (
             <span key={i} className="text-[10px] font-black tracking-[0.2em] text-slate-500 uppercase whitespace-nowrap">
