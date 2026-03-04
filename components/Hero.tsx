@@ -27,7 +27,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4 w-full sm:w-auto">
             <button 
               onClick={openModal}
-              className="px-10 py-4 rounded-md bg-accent-cyan/10 sm:bg-accent-cyan/10 border border-accent-cyan/30 sm:border-accent-cyan/30 text-white font-bold text-sm hover:bg-accent-cyan hover:text-white hover:border-accent-cyan hover:shadow-md hover:shadow-accent-cyan/10 transition-all hover:scale-105 active:scale-95 text-center w-full sm:w-auto shadow-md shadow-accent-cyan/5 sm:shadow-none">
+              className="px-10 py-4 rounded-md bg-accent-cyan border border-accent-cyan text-white font-bold text-sm hover:opacity-90 hover:shadow-md hover:shadow-accent-cyan/10 transition-all hover:scale-105 active:scale-95 text-center w-full sm:w-auto shadow-md shadow-accent-cyan/10">
               Agendar Reunión
             </button>
             <button 
