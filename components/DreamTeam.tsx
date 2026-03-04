@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronRight } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -26,9 +26,11 @@ const TeamMemberCard = ({ name, role, imageSrc, onClick }: { name: string, role:
         <div className="absolute inset-0 bg-gradient-to-t from-background-dark/40 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40" />
       </div>
 
-      {/* Chevron Indicator */}
-      <div className="absolute top-4 right-4 text-accent-cyan opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 transform translate-x-0 md:translate-x-[-10px] md:group-hover:translate-x-0 z-20">
-        <ChevronRight size={24} strokeWidth={2.5} />
+      {/* Plus Indicator */}
+      <div className="absolute top-4 right-4 z-20">
+        <div className="w-6 h-6 rounded-full border border-accent-cyan/30 flex items-center justify-center transition-all duration-300 md:opacity-0 md:group-hover:opacity-100 group-hover:bg-accent-cyan/20 group-hover:border-accent-cyan">
+          <Plus size={14} className="text-accent-cyan transition-colors duration-300 group-hover:text-white" strokeWidth={2.5} />
+        </div>
       </div>
 
       {/* Decorative Gradient Light */}

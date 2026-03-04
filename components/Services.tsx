@@ -1,6 +1,6 @@
 'use client';
 
-import { Code, FlaskConical, Check, ChevronRight } from 'lucide-react';
+import { Code, FlaskConical, Check, Plus } from 'lucide-react';
 import Link from 'next/link';
 import AnimatedText from './AnimatedText';
 import { motion, Variants } from 'framer-motion';
@@ -39,9 +39,11 @@ const ServiceCard = ({ icon: Icon, title, description, items, href, index, iconC
       <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent-cyan/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       
-      {/* Chevron Indicator */}
-      <div className="absolute top-8 right-8 text-accent-cyan opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 transform translate-x-0 md:translate-x-[-10px] md:group-hover:translate-x-0">
-        <ChevronRight size={24} strokeWidth={2.5} />
+      {/* Plus Indicator */}
+      <div className="absolute top-8 right-8 z-20">
+        <div className="w-8 h-8 rounded-full border border-accent-cyan/30 flex items-center justify-center transition-all duration-300 md:opacity-0 md:group-hover:opacity-100 group-hover:bg-accent-cyan/20 group-hover:border-accent-cyan">
+          <Plus size={18} className="text-accent-cyan transition-colors duration-300 group-hover:text-white" strokeWidth={2.5} />
+        </div>
       </div>
 
       <div className="relative flex flex-col h-full">
