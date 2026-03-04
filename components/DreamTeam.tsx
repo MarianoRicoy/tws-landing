@@ -36,13 +36,31 @@ const TeamMemberCard = ({ name, role, imageSrc, onClick }: { name: string, role:
     </div>
 
     {/* Content Block (Outside Card) */}
-    <div className="mt-4 flex flex-col items-start text-left px-1">
+    <div className="mt-4 flex flex-col items-start text-left px-1 w-full overflow-hidden">
       <h3 className="text-lg font-bold text-white mb-0.5 transition-all duration-300 group-hover:text-accent-cyan">
         {name}
       </h3>
-      <p className="text-[10px] font-black tracking-[0.2em] text-slate-500 uppercase">
-        {role}
-      </p>
+      <div className="relative w-full overflow-hidden h-4">
+        <motion.div
+          animate={{ x: [0, -200] }}
+          transition={{ 
+            duration: 10, 
+            repeat: Infinity, 
+            ease: "linear",
+            repeatDelay: 0
+          }}
+          className="flex gap-8 whitespace-nowrap items-center group-hover:[animation-play-state:running]"
+          style={{ 
+            animationPlayState: 'paused'
+          }}
+        >
+          {[0, 1, 2, 3].map((i) => (
+            <span key={i} className="text-[10px] font-black tracking-[0.2em] text-slate-500 uppercase whitespace-nowrap">
+              {role}
+            </span>
+          ))}
+        </motion.div>
+      </div>
     </div>
   </motion.div>
 );
