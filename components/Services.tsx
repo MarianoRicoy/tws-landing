@@ -1,6 +1,6 @@
 'use client';
 
-import { Code, FlaskConical, Check } from 'lucide-react';
+import { Code, FlaskConical, Check, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import AnimatedText from './AnimatedText';
 import { motion, Variants } from 'framer-motion';
@@ -32,21 +32,27 @@ const ServiceCard = ({ icon: Icon, title, description, items, href, index, iconC
 }) => (
   <Link href={href} passHref>
     <motion.div
-      className="group relative h-full bg-surface-dark/40 rounded-2xl p-8 border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2"
+      className="group relative h-full bg-surface-dark/40 rounded-2xl p-8 border border-white/10 overflow-hidden transition-all duration-300 hover:bg-white/[0.03] hover:border-accent-cyan/30 hover:-translate-y-2"
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }}
       custom={index}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      {/* Decorative Gradient and Light */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent-cyan/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       
+      {/* Chevron Indicator */}
+      <div className="absolute top-8 right-8 text-accent-cyan opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
+        <ChevronRight size={24} strokeWidth={2.5} />
+      </div>
+
       <div className="relative flex flex-col h-full">
         <div className="w-14 h-14 rounded-lg bg-background-dark border border-white/10 flex items-center justify-center mb-6 group-hover:border-accent-cyan/50 transition-colors duration-300">
           <Icon size={28} className={iconClassName} />
         </div>
-        <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
+        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-accent-cyan transition-colors duration-300">{title}</h3>
         <p className="text-muted-white mb-8 leading-relaxed text-sm flex-grow">
           {description}
         </p>
