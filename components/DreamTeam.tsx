@@ -116,17 +116,11 @@ export default function DreamTeam() {
     <section data-theme="dark" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20 flex flex-col items-center">
-          <div className="flex items-center gap-2 mb-4">
-            <h2 className="text-sm font-black tracking-[0.3em] text-accent-cyan uppercase" style={{ textShadow: '0 0 25px rgba(58, 130, 246, 0.8)' }}>
-              Equipo
-            </h2>
-            <img 
-              src="/Isologo.svg" 
-              alt="TWS Isologo" 
-              className="h-4 w-auto brightness-0 invert [filter:sepia(100%)_hue-rotate(190deg)_saturate(500%)]"
-              style={{ filter: 'drop-shadow(0 0 10px rgba(58, 130, 246, 0.8))' }}
-            />
-          </div>
+          <img 
+            src="/Isologo.svg" 
+            alt="TWS Isologo" 
+            className="h-8 w-auto mb-6 opacity-80"
+          />
           <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
             Dirección y <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Estrategia</span>
           </h1>
