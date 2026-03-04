@@ -62,7 +62,7 @@ export default function Valores() {
     <section className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] md:text-5xl font-bold text-white mb-4">
             Nuestros <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Valores</span>
           </h2>
         </div>

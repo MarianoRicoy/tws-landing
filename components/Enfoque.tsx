@@ -62,7 +62,7 @@ export default function Enfoque() {
     <section data-theme="dark" className="py-28 bg-tws-solid">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] font-bold text-white mb-4">
             Cómo Abordamos Cada <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Proyecto</span>
           </h2>
         </div>

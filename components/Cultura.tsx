@@ -48,7 +48,7 @@ export default function Cultura() {
     <section className="py-24" ref={containerRef}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+          <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] md:text-5xl font-bold text-white tracking-tight mb-4">
             Nuestra <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Cultura</span>
           </h2>
           <p className="text-muted-white text-lg max-w-2xl mx-auto">
@@ -105,8 +105,8 @@ function ScrollText({ text, index, total }: { text: string, index: number, total
       style={{ opacity, y, color }}
       className={`${
         isLast 
-          ? "text-4xl md:text-5xl font-bold text-accent-cyan" 
-          : "text-2xl md:text-3xl font-medium leading-relaxed"
+          ? "text-[clamp(1.75rem,5vw,3rem)] md:text-5xl font-bold text-accent-cyan" 
+          : "text-[clamp(1.25rem,4vw,1.875rem)] md:text-3xl font-medium leading-relaxed"
       } transition-colors duration-300`}
     >
       {text}

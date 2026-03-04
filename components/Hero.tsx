@@ -16,7 +16,7 @@ export default function Hero() {
             DESARROLLO DE SOFTWARE + PRODUCTOS
           </p>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white leading-[1.1] max-w-5xl">
+          <h1 className="text-[clamp(2.5rem,8vw,5rem)] md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white leading-[1.1] max-w-5xl">
             Tecnología con <span className="text-accent-cyan">Propósito</span>
           </h1>
           

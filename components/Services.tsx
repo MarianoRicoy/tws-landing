@@ -86,7 +86,7 @@ export default function Services() {
   return (
     <section id="servicios" className="pt-12 pb-24 md:pt-16 md:pb-32">
       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] md:text-5xl font-bold text-white mb-6">
           Un Ecosistema <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Híbrido</span>
         </h2>
         <p className="text-muted-white/80 max-w-2xl mx-auto text-base md:text-lg">
