@@ -95,18 +95,19 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     try {
       console.log('Enviando formulario con EmailJS...');
       
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
+      // Intentar obtener las variables de entorno, con fallback a valores fijos si es necesario para depuración
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_7a4sdz4';
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_biqm9la';
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'OTydXdpVkW09fibrJ';
 
-      console.log('Configuración detectada:', { 
+      console.log('Configuración detectada (con fallback):', { 
         serviceId: serviceId ? 'OK' : 'MISSING', 
         templateId: templateId ? 'OK' : 'MISSING', 
         publicKey: publicKey ? 'OK' : 'MISSING' 
       });
 
       if (!serviceId || !templateId || !publicKey) {
-        throw new Error('Configuración de EmailJS incompleta. Verifica tu archivo .env.local y reinicia el servidor.');
+        throw new Error('Configuración de EmailJS incompleta.');
       }
 
       const result = await emailjs.sendForm(
