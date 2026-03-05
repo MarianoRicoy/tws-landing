@@ -83,11 +83,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 <label htmlFor="message" className="block text-xs font-semibold text-[#94a3b8] uppercase tracking-wider mb-2">Tu mensaje</label>
                 <textarea id="message" rows={4} placeholder="Cuéntanos cómo podemos ayudarte..." className="w-full bg-[#181C26]/50 border border-white/10 rounded-xl p-3 text-white placeholder:text-[#64748b] focus:outline-none focus:border-accent-cyan transition-all"></textarea>
               </div>
-              <div className="flex justify-center pb-4 md:pb-0">
+              <div className="flex justify-center pb-4 md:pb-0 pt-6">
                 <button
                   type="submit"
                   disabled={false}
-                  className="w-full bg-accent-cyan text-white font-bold py-4 rounded-lg hover:opacity-90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-md shadow-accent-cyan/10 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="px-8 bg-accent-cyan text-white font-bold py-4 rounded-lg hover:opacity-90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-md shadow-accent-cyan/10 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   Enviar Mensaje
                 </button>
