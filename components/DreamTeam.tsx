@@ -77,7 +77,7 @@ export default function DreamTeam() {
     {
       name: "Ezequiel Petruzzi",
       role: "CEO / CTO",
-      imageSrc: "/DreamTeam/EzeTwsPro.jpeg",
+      imageSrc: "/DreamTeam/EzeTwsTeam.png",
       description: "Lidera la visión tecnológica y estratégica de TWS. Su enfoque integra la arquitectura técnica con los objetivos de negocio, asegurando que cada desarrollo sea escalable y aporte valor real. Especialista en resolver desafíos complejos, garantiza la solidez y el alto rendimiento en cada proyecto de la Software Factory."
     },
     {

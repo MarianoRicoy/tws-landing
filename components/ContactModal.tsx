@@ -1,13 +1,67 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { Mail, Linkedin, MapPin, X, Send, Loader2, CheckCircle2 } from 'lucide-react';
+import { Mail, Linkedin, MapPin, X, Loader2, RefreshCcw, Home } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import Link from 'next/link';
 
 interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
+const FeedbackState = ({ 
+  type, 
+  onClose, 
+  onRetry 
+}: { 
+  type: 'success' | 'error', 
+  onClose: () => void, 
+  onRetry?: () => void 
+}) => (
+  <div className="h-full flex flex-col items-center justify-center text-center py-12 px-6 animate-in fade-in zoom-in duration-500">
+    <div 
+      className="w-20 h-20 rounded-3xl flex items-center justify-center mb-8 shadow-lg"
+      style={{ 
+        backgroundColor: 'rgba(58, 130, 246, 0.4)',
+        backdropFilter: 'blur(8px)',
+        border: '1px solid rgba(58, 130, 246, 0.2)'
+      }}
+    >
+      <img src="/Isologo.svg" alt="TWS" className="w-10 h-10" />
+    </div>
+    
+    <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+      {type === 'success' ? 'Mensaje enviado con éxito' : 'No se pudo enviar el mensaje'}
+    </h2>
+    
+    <p className="text-[#94a3b8] max-w-sm mb-10 leading-relaxed">
+      {type === 'success' 
+        ? 'Gracias por contactarnos. Nuestro equipo revisará tu consulta y te responderá lo antes posible.' 
+        : 'Hubo un problema técnico al procesar tu solicitud. Por favor, intenta de nuevo o contáctanos por email.'}
+    </p>
+
+    <div className="flex flex-col sm:flex-row gap-4 w-full max-w-xs sm:max-w-md justify-center">
+      {type === 'error' && onRetry && (
+        <button
+          onClick={onRetry}
+          className="flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all active:scale-95"
+        >
+          <RefreshCcw size={18} />
+          Volver a intentar
+        </button>
+      )}
+      <Link
+        href="/"
+        onClick={onClose}
+        className="flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-accent-cyan text-white font-bold hover:opacity-90 transition-all active:scale-95 shadow-md shadow-accent-cyan/20"
+      >
+        <Home size={18} />
+        Ir al inicio
+      </Link>
+    </div>
+  </div>
+);
 
 const ContactInfo = ({ icon: Icon, title, value, href }: { icon: React.ElementType, title: string, value: string, href: string }) => (
   <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
@@ -46,8 +100,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
       if (!serviceId || !templateId || !publicKey) {
         console.warn('Configuración de EmailJS incompleta. Por favor configure las variables de entorno.');
-        setError('El sistema de contacto no está configurado. Por favor, escríbenos directamente a info@tws.ar');
-        return;
+        throw new Error('Configuración incompleta');
       }
 
       await emailjs.sendForm(
@@ -58,29 +111,43 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
       );
 
       setIsSent(true);
-      setTimeout(() => {
-        onClose();
-        setIsSent(false);
-      }, 3000);
     } catch (err) {
       console.error('EmailJS Error:', err);
-      setError('Hubo un error al enviar el mensaje. Por favor, reintenta o escríbenos directamente por email.');
+      setError('error');
     } finally {
       setIsSending(false);
     }
   };
 
+  const handleRetry = () => {
+    setError(null);
+    setIsSent(false);
+    if (formRef.current) {
+      formRef.current.reset();
+    }
+  };
+
+  const handleClose = () => {
+    onClose();
+    // Reset state after closing
+    setTimeout(() => {
+      setIsSent(false);
+      setError(null);
+      if (formRef.current) formRef.current.reset();
+    }, 300);
+  };
+
   return (
-    <div onClick={onClose} className="fixed inset-0 z-50 flex items-start justify-center bg-[#181C26]/80 backdrop-blur-md p-4 overflow-y-auto pt-20 pb-10 transition-all duration-300">
+    <div onClick={handleClose} className="fixed inset-0 z-50 flex items-start justify-center bg-[#181C26]/80 backdrop-blur-md p-4 overflow-y-auto pt-20 pb-10 transition-all duration-300">
       <div onClick={(e) => e.stopPropagation()} className="relative w-full max-w-5xl bg-[#0F1219]/90 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl overflow-hidden transition-all duration-500">
         <button
-          onClick={onClose}
+          onClick={handleClose}
           className="absolute top-4 right-4 md:top-6 md:right-6 text-[#94a3b8] hover:text-white transition-colors z-20 bg-[#0F1219]/50 p-2 rounded-full md:bg-transparent md:p-0"
         >
           <X className="h-6 w-6 md:h-7 md:w-7" />
         </button>
         
-        <div className="flex flex-col-reverse md:grid md:grid-cols-12 min-h-screen md:min-h-0">
+        <div className="flex flex-col-reverse md:grid md:grid-cols-12 min-h-[500px] md:min-h-0">
           {/* Left Column */}
           <div className="md:col-span-4 bg-black/30 p-6 md:p-10 flex flex-col justify-between items-center text-center md:items-start md:text-left border-t md:border-t-0 md:border-r border-white/5">
             <div className="w-full flex flex-col items-center md:items-start">
@@ -96,15 +163,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
           </div>
 
           {/* Right Column */}
-          <div className="md:col-span-8 p-6 md:p-10">
+          <div className="md:col-span-8 p-6 md:p-10 flex flex-col">
             {isSent ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-20 animate-in fade-in zoom-in duration-500">
-                <CheckCircle2 className="w-20 h-20 text-accent-cyan mb-6" />
-                <h2 className="text-3xl font-bold text-white mb-4">¡Mensaje Enviado!</h2>
-                <p className="text-[#94a3b8] max-w-sm">
-                  Gracias por contactarnos. Nuestro equipo revisará tu mensaje y te responderá a la brevedad.
-                </p>
-              </div>
+              <FeedbackState type="success" onClose={handleClose} />
+            ) : error ? (
+              <FeedbackState type="error" onClose={handleClose} onRetry={handleRetry} />
             ) : (
               <>
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">Ponte en contacto</h2>
@@ -165,7 +228,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                     ></textarea>
                   </div>
 
-                  {error && (
+                  {error && error !== 'error' && (
                     <p className="text-red-500 text-xs mb-4 font-medium">{error}</p>
                   )}
 
