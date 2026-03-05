@@ -93,27 +93,34 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     setError(null);
 
     try {
-      // Usar variables de entorno si están disponibles, de lo contrario usar strings vacíos para evitar crash
+      console.log('Enviando formulario con EmailJS...');
+      
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
 
+      console.log('Configuración detectada:', { 
+        serviceId: serviceId ? 'OK' : 'MISSING', 
+        templateId: templateId ? 'OK' : 'MISSING', 
+        publicKey: publicKey ? 'OK' : 'MISSING' 
+      });
+
       if (!serviceId || !templateId || !publicKey) {
-        console.warn('Configuración de EmailJS incompleta. Por favor configure las variables de entorno.');
-        throw new Error('Configuración incompleta');
+        throw new Error('Configuración de EmailJS incompleta. Verifica tu archivo .env.local y reinicia el servidor.');
       }
 
-      await emailjs.sendForm(
+      const result = await emailjs.sendForm(
         serviceId,
         templateId,
         formRef.current,
         publicKey
       );
 
+      console.log('Resultado EmailJS:', result.text);
       setIsSent(true);
-    } catch (err) {
-      console.error('EmailJS Error:', err);
-      setError('error');
+    } catch (err: any) {
+      console.error('Error detallado de EmailJS:', err);
+      setError(err?.text || err?.message || 'error');
     } finally {
       setIsSending(false);
     }
