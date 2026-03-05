@@ -59,11 +59,6 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} TWS Tech With Soul. Todos los derechos reservados.
             </p>
           </div>
-          
-          <div className="flex gap-8 text-[#64748b] text-xs order-1 md:order-2">
-            <Link href="/en-desarrollo" className="hover:text-white transition-colors">Privacidad</Link>
-            <Link href="/en-desarrollo" className="hover:text-white transition-colors">Términos</Link>
-          </div>
         </div>
       </div>
     </footer>
