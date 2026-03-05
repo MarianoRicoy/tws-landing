@@ -121,7 +121,7 @@ export default function DreamTeam() {
           <img 
             src="/Isologo.svg" 
             alt="TWS Isologo" 
-            className="h-8 w-auto mb-6 opacity-80"
+            className="h-5 w-auto mb-6 opacity-80"
           />
           <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
             Dirección y <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Estrategia</span>
