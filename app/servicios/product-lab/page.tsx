@@ -227,7 +227,7 @@ export default function ProductLabPage() {
               onClick={openModal}
               className="px-10 py-4 rounded-md bg-accent-cyan text-white font-bold text-sm hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-md shadow-accent-cyan/10 w-full sm:w-auto"
             >
-              Iniciar Proyecto
+              Agendar Reunión
             </button>
           </motion.div>
         </div>
