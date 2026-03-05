@@ -81,6 +81,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 </div>
               </div>
               <div className="mb-6">
+                <label htmlFor="message" className="block text-xs font-semibold text-[#94a3b8] uppercase tracking-wider mb-2">Tu mensaje</label>
                 <textarea id="message" rows={4} placeholder="Cuéntanos cómo podemos ayudarte..." className="w-full bg-[#181C26]/50 border border-white/10 rounded-xl p-3 text-white placeholder:text-[#64748b] focus:outline-none focus:border-accent-cyan transition-all"></textarea>
               </div>
               <div className="flex justify-center pb-4 md:pb-0 pt-6">
