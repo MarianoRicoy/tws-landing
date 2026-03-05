@@ -11,6 +11,9 @@ const technologies = [
   'Figma',
   'AWS',
   'Vercel',
+  'Docker',
+  'MongoDB',
+  'Google Cloud',
 ];
 
 export default function TechStack() {
