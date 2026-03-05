@@ -37,7 +37,6 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-6 tracking-wider uppercase text-xs">Empresa</h4>
             <ul className="space-y-4 text-[#94a3b8]">
               <li><Link href="/nosotros" className="hover:text-accent-cyan transition-colors">Sobre Nosotros</Link></li>
-              <li><Link href="/en-desarrollo" className="hover:text-accent-cyan transition-colors">Productos</Link></li>
               <li><button onClick={openModal} className="hover:text-accent-cyan transition-colors">Contacto</button></li>
             </ul>
           </div>

@@ -155,13 +155,6 @@ export default function Navbar() {
                 </a>
                 <span className={`font-light text-lg transition-colors duration-500 ${isDarkTheme ? 'text-white/20' : 'text-black/10'}`}>|</span>
                 <Link 
-                  href="/en-desarrollo" 
-                  className={`transition-all border-b-2 border-transparent hover:border-white pb-1 ${pathname === '/en-desarrollo' ? 'border-white' : ''}`}
-                >
-                  Productos
-                </Link>
-                <span className={`font-light text-lg transition-colors duration-500 ${isDarkTheme ? 'text-white/20' : 'text-black/10'}`}>|</span>
-                <Link 
                   href="/nosotros" 
                   className={`transition-all border-b-2 border-transparent hover:border-white pb-1 ${pathname === '/nosotros' ? 'border-white' : ''}`}
                 >
@@ -197,7 +190,6 @@ export default function Navbar() {
                 <div className="flex flex-col py-8 px-6 gap-6 text-center text-[11px] tracking-[0.2em] font-bold text-white uppercase">
                   <Link href="/" onClick={handleLogoClick} className="hover:text-accent-cyan transition-colors">Inicio</Link>
                   <a href="/#servicios" onClick={(e) => handleNavigation(e, '/#servicios')} className="hover:text-accent-cyan transition-colors">Servicios</a>
-                  <Link href="/en-desarrollo" onClick={(e) => handleNavigation(e, '/en-desarrollo')} className="hover:text-accent-cyan transition-colors">Productos</Link>
                   <Link href="/nosotros" onClick={(e) => handleNavigation(e, '/nosotros')} className="hover:text-accent-cyan transition-colors">Nosotros</Link>
                   <button onClick={handleContactAndCloseMenu} className="text-accent-cyan font-black hover:opacity-80 transition-opacity">Contacto</button>
                 </div>
