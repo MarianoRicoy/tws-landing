@@ -65,11 +65,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   <input type="email" id="email" placeholder="alex@ejemplo.com" className="w-full bg-[#181C26]/50 border border-white/10 rounded-xl p-3 text-white placeholder:text-[#64748b] focus:outline-none focus:border-accent-cyan transition-all" />
                 </div>
               </div>
-              <div className="mb-4">
+              <div className="mb-6">
                 <label htmlFor="subject" className="block text-xs font-semibold text-[#94a3b8] uppercase tracking-wider mb-2">Asunto de interés</label>
                 <div className="relative">
                   <select id="subject" className="w-full bg-[#181C26]/50 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-accent-cyan transition-all appearance-none cursor-pointer">
                     <option>Consulta General</option>
+                    <option>Presupuestos</option>
                     <option>Software Factory</option>
                     <option>Product Lab</option>
                     <option>Carreras</option>
@@ -80,7 +81,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 </div>
               </div>
               <div className="mb-6">
-                <label htmlFor="message" className="block text-xs font-semibold text-[#94a3b8] uppercase tracking-wider mb-2">Tu mensaje</label>
                 <textarea id="message" rows={4} placeholder="Cuéntanos cómo podemos ayudarte..." className="w-full bg-[#181C26]/50 border border-white/10 rounded-xl p-3 text-white placeholder:text-[#64748b] focus:outline-none focus:border-accent-cyan transition-all"></textarea>
               </div>
               <div className="flex justify-center pb-4 md:pb-0 pt-6">
