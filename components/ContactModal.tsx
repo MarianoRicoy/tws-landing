@@ -95,25 +95,36 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     try {
       console.log('Enviando formulario con EmailJS...');
       
-      // Intentar obtener las variables de entorno, con fallback a valores fijos si es necesario para depuración
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_7a4sdz4';
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_biqm9la';
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'OTydXdpVkW09fibrJ';
 
-      console.log('Configuración detectada (con fallback):', { 
-        serviceId: serviceId ? 'OK' : 'MISSING', 
-        templateId: templateId ? 'OK' : 'MISSING', 
-        publicKey: publicKey ? 'OK' : 'MISSING' 
+      console.log('Configuración detectada:', { 
+        serviceId: serviceId, 
+        templateId: templateId, 
+        publicKey: publicKey 
       });
 
       if (!serviceId || !templateId || !publicKey) {
         throw new Error('Configuración de EmailJS incompleta.');
       }
 
-      const result = await emailjs.sendForm(
+      // Preparar los datos del formulario manualmente para asegurar que coincidan con la plantilla
+      const formData = new FormData(formRef.current);
+      const templateParams = {
+        user_name: formData.get('user_name'),
+        user_email: formData.get('user_email'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+        to_email: 'info@tws.ar' // Forzar el destinatario por si la plantilla usa una variable
+      };
+
+      console.log('Parámetros de la plantilla:', templateParams);
+
+      const result = await emailjs.send(
         serviceId,
         templateId,
-        formRef.current,
+        templateParams,
         publicKey
       );
 
