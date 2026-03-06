@@ -146,32 +146,32 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div onClick={handleClose} className="fixed inset-0 z-50 flex items-start justify-center bg-[#181C26]/80 backdrop-blur-md p-4 overflow-y-auto pt-20 pb-10 transition-all duration-300">
-      <div onClick={(e) => e.stopPropagation()} className="relative w-full max-w-5xl bg-[#0F1219]/90 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl overflow-hidden transition-all duration-500">
+    <div onClick={handleClose} className="fixed inset-0 z-50 flex items-center justify-center bg-[#181C26]/80 backdrop-blur-md p-4 overflow-y-auto transition-all duration-300">
+      <div onClick={(e) => e.stopPropagation()} className="relative w-full max-w-5xl bg-[#0F1219]/90 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl overflow-hidden transition-all duration-500 max-h-[90vh] flex flex-col">
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 md:top-6 md:right-6 text-[#94a3b8] hover:text-white transition-colors z-20 bg-[#0F1219]/50 p-2 rounded-full md:bg-transparent md:p-0"
+          className="absolute top-4 right-4 md:top-6 md:right-6 text-[#94a3b8] hover:text-white transition-colors z-30 bg-[#0F1219]/50 p-2 rounded-full md:bg-transparent md:p-0"
         >
           <X className="h-6 w-6 md:h-7 md:w-7" />
         </button>
         
-        <div className="flex flex-col-reverse md:grid md:grid-cols-12 min-h-[500px] md:min-h-0">
-          {/* Left Column */}
-          <div className="md:col-span-4 bg-black/30 p-6 md:p-10 flex flex-col justify-between items-center text-center md:items-start md:text-left border-t md:border-t-0 md:border-r border-white/5">
-            <div className="w-full flex flex-col items-center md:items-start">
-              <img src="/Isologo.svg" alt="TWS Isologo" className="h-8 w-auto mb-10 md:h-6 opacity-90" />
+        <div className="flex flex-col md:grid md:grid-cols-12 overflow-y-auto">
+          {/* Left Column - Hidden on very small screens or adjusted */}
+          <div className="hidden md:flex md:col-span-4 bg-black/30 p-10 flex-col justify-between border-r border-white/5">
+            <div className="w-full">
+              <img src="/Isologo.svg" alt="TWS Isologo" className="h-6 w-auto mb-10 opacity-90" />
               <div className="space-y-6 w-full text-left">
                 <ContactInfo icon={Mail} title="Email" value="info@tws.ar" href="mailto:info@tws.ar" />
                 <ContactInfo icon={Linkedin} title="LinkedIn" value="/company/tech-with-soul" href="https://www.linkedin.com/company/tech-with-soul" />
               </div>
             </div>
-            <p className="text-sm font-semibold italic mt-12 md:mt-0 tracking-wide" style={{ color: '#3b82f6', textShadow: '0 0 15px rgba(58, 130, 246, 0.6)' }}>
+            <p className="text-sm font-semibold italic tracking-wide" style={{ color: '#3b82f6', textShadow: '0 0 15px rgba(58, 130, 246, 0.6)' }}>
               Tecnología con Propósito
             </p>
           </div>
 
           {/* Right Column */}
-          <div className="md:col-span-8 p-6 md:p-10 flex flex-col">
+          <div className="col-span-12 md:col-span-8 p-6 md:p-10 flex flex-col">
             {isSent ? (
               <FeedbackState type="success" onClose={handleClose} />
             ) : error ? (

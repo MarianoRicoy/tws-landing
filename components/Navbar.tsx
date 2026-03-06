@@ -187,11 +187,11 @@ export default function Navbar() {
 
             {isMobileMenuOpen && (
               <div className="fixed inset-x-0 top-[90px] mx-6 rounded-2xl bg-background-dark/95 backdrop-blur-xl border border-white/10 md:hidden overflow-hidden shadow-2xl z-50">
-                <div className="flex flex-col py-8 px-6 gap-6 text-center text-[11px] tracking-[0.2em] font-bold text-white uppercase">
-                  <Link href="/" onClick={handleLogoClick} className="hover:text-accent-cyan transition-colors">Inicio</Link>
-                  <a href="/#servicios" onClick={(e) => handleNavigation(e, '/#servicios')} className="hover:text-accent-cyan transition-colors">Servicios</a>
-                  <Link href="/nosotros" onClick={(e) => handleNavigation(e, '/nosotros')} className="hover:text-accent-cyan transition-colors">Nosotros</Link>
-                  <button onClick={handleContactAndCloseMenu} className="text-accent-cyan font-black hover:opacity-80 transition-opacity">Contacto</button>
+        <div className="flex flex-col py-8 px-6 gap-8 text-center text-[13px] tracking-[0.2em] font-bold text-white uppercase">
+                  <Link href="/" onClick={handleLogoClick} className="hover:text-accent-cyan transition-colors py-2">Inicio</Link>
+                  <a href="/#servicios" onClick={(e) => handleNavigation(e, '/#servicios')} className="hover:text-accent-cyan transition-colors py-2">Servicios</a>
+                  <Link href="/nosotros" onClick={(e) => handleNavigation(e, '/nosotros')} className="hover:text-accent-cyan transition-colors py-2">Nosotros</Link>
+                  <button onClick={handleContactAndCloseMenu} className="text-accent-cyan font-black hover:opacity-80 transition-opacity py-4 border border-accent-cyan/20 rounded-xl bg-accent-cyan/5 mt-2">Contacto</button>
                 </div>
               </div>
             )}
