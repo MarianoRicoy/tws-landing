@@ -116,7 +116,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         user_email: formData.get('user_email'),
         subject: formData.get('subject'),
         message: formData.get('message'),
-        to_email: 'info@tws.ar' // Forzar el destinatario por si la plantilla usa una variable
+        // to_email es una variable que EmailJS usa para saber a quién enviar si está configurado en la plantilla
+        to_email: 'info@tws.ar'
       };
 
       console.log('Parámetros de la plantilla:', templateParams);

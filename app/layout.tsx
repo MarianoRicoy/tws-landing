@@ -18,6 +18,11 @@ function AppLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/Isologo.svg" type="image/svg+xml" />
+        <title>TWS | Tech With Soul</title>
+        <meta name="description" content="Tecnología con Propósito. Desarrollo de software y factoría de productos digitales." />
+      </head>
       <body className={`${outfit.className} text-white bg-tws-solid min-h-screen relative`}>
         {/* Background Mesh Grid */}
         <div className="fixed inset-0 bg-mesh-grid opacity-20 pointer-events-none -z-10" />
