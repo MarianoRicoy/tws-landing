@@ -81,12 +81,6 @@ export default function DreamTeam() {
       description: "Lidera la visión tecnológica y estratégica de TWS. Su enfoque integra la arquitectura técnica con los objetivos de negocio, asegurando que cada desarrollo sea escalable y aporte valor real. Especialista en resolver desafíos complejos, garantiza la solidez y el alto rendimiento en cada proyecto de la Software Factory."
     },
     {
-      name: "Rafael Alvarez Lopez",
-      role: "Head of Backend",
-      imageSrc: "/DreamTeam/RafaTwsPro.jpeg",
-      description: "Responsable de la arquitectura y robustez técnica de nuestras soluciones. Se especializa en diseñar estructuras backend escalables y seguras que soportan el alto tráfico y las demandas de productos en crecimiento. Su enfoque garantiza que la lógica del negocio funcione con precisión y eficiencia absoluta."
-    },
-    {
       name: "Maria Victoria Gallo",
       role: "Product & Growth Lead",
       imageSrc: "/DreamTeam/VickyTwsPro.jpeg",
@@ -128,7 +122,7 @@ export default function DreamTeam() {
           </h1>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
           {teamMembers.map((member, index) => (
             <TeamMemberCard
               key={index}
