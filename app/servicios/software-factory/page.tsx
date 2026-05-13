@@ -120,11 +120,11 @@ const pillars = [
     icon: Rocket,
     title: 'De la Idea al Producto Real',
     tags: ['Startup', 'MVP', 'Scale'],
-    description: 'Ideal para startups que necesitan validar su negocio rápido. Construimos una primera versión sólida de tu producto para que puedas lanzarla al mercado, atraer usuarios y obtener inversión, asegurando que los cimientos técnicos sean los correctos.',
+    description: 'Ideal para empresas que necesitan validar y digitalizar sus procesos rápidamente. Construimos una primera versión sólida de tu producto para que puedas lanzarla al mercado, optimizar operaciones y escalar con bases técnicas seguras.',
     points: [
-      'Lanzamiento rápido al mercado',
+      'Lanzamiento ágil al mercado',
       'Arquitectura sólida y escalable',
-      'Listo para rondas de inversión'
+      'Digitalización de procesos'
     ]
   },
 ];
@@ -152,7 +152,7 @@ export default function SoftwareFactoryPage() {
             </p>
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-              Ingeniería de Software <br /> para <span className="text-accent-cyan">Scale-ups</span>
+              Ingeniería de Software <br /> para <span className="text-accent-cyan">Empresas en Crecimiento</span>
             </h1>
             
             <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">

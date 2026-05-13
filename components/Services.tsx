@@ -72,7 +72,7 @@ const services = [
     icon: Code,
     title: 'Software Factory',
     description: 'Desarrollamos soluciones tecnológicas de alto impacto para empresas que buscan escalar. Código limpio, arquitectura escalable y entrega ágil.',
-    items: ['Desarrollo Web & Mobile (React/Native)', 'Staff Augmentation', 'MVP para Startups'],
+    items: ['Creación de Apps', 'Desarrollo Web a Medida', 'Sistemas de Gestión'],
     href: '/servicios/software-factory',
     iconClassName: 'text-white'
   },

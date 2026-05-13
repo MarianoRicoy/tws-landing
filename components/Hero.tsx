@@ -21,7 +21,7 @@ export default function Hero() {
           </h1>
           
           <p className="text-base md:text-xl text-slate-400 max-w-xl mx-auto leading-relaxed font-medium px-2 md:px-0">
-            Fusionamos la ingeniería de una agencia de desarrollo con la visión de una incubadora de productos. Transformamos ideas complejas en soluciones digitales con alma.
+            Desarrollamos aplicaciones web, plataformas móviles y sistemas a medida. Ayudamos a empresas a escalar con software de alta calidad y creamos nuestros propios productos digitales.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 pt-2 md:pt-4 w-full sm:w-auto px-4 md:px-0">

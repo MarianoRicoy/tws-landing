@@ -126,11 +126,11 @@ export default function ProductLabPage() {
             </p>
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-              Diseño de Productos <br /> con <span className="text-accent-cyan text-glow">Mentalidad VC</span>
+              Diseño y Creación de Productos <br /> <span className="text-accent-cyan text-glow">Digitales</span>
             </h1>
             
             <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
-              El Product Lab es nuestro ecosistema de innovación. Aquí incubamos soluciones digitales diseñadas para ser escalables, eficientes y con un propósito claro de mercado.
+              El Product Lab es nuestro espacio de innovación. Aquí creamos herramientas digitales enfocadas en resolver problemas reales del mercado, diseñadas para ser escalables, eficientes y aportar valor desde el primer día.
             </p>
           </motion.div>
         </div>
