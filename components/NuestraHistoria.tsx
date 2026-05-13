@@ -14,16 +14,10 @@ export default function NuestraHistoria() {
           <div className="text-left md:col-span-2">
             <div className="text-white/90 space-y-4 leading-relaxed text-lg font-medium">
               <p>
-                TWS surge de la sinergia de cuatro perfiles técnicos en un entorno de alto rendimiento. Al enfrentar desafíos complejos, optimizaciones y despliegues críticos, confirmamos que la diversidad de enfoques es nuestra mayor solidez.
+                TWS surge de la sinergia de un equipo técnico multidisciplinario en un entorno de alto rendimiento. Al enfrentar desafíos complejos, confirmamos que la clave de toda gran solución es entender el negocio detrás del código. Integramos visión estratégica, diseño de producto y desarrollo a medida para crear herramientas que realmente aporten valor.
               </p>
               <p>
-                Integramos experiencia en visión estratégica, arquitectura backend, desarrollo de producto y frontend para crear TWS.
-              </p>
-              <p>
-                Lo que comenzó como un enfoque compartido hoy es una Software Factory + Product Lab con una misión clara: construir tecnología con intención. Superamos la simple escritura de código para entregar productos escalables y eficientes que aporten valor real.
-              </p>
-              <p>
-                Porque cuando la solidez técnica y la visión de producto se alinean, la innovación se convierte en soluciones tangibles.
+                Hoy somos un socio tecnológico estratégico con una misión clara: construir ecosistemas digitales robustos, escalables y eficientes que impulsen el crecimiento de las empresas. Porque cuando la solidez técnica y los objetivos de negocio se alinean, la innovación se convierte en resultados tangibles.
               </p>
             </div>
           </div>
