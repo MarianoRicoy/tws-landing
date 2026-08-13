@@ -2,7 +2,6 @@
 
 import { Plus } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useState } from 'react';
 import TeamMemberModal from './TeamMemberModal';
 import { motion } from 'framer-motion';
@@ -17,10 +16,11 @@ const TeamMemberCard = ({ name, role, imageSrc, onClick }: { name: string, role:
     <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/5 bg-surface-dark transition-all duration-500 md:group-hover:border-accent-cyan/30 md:group-hover:bg-white/[0.03] active:bg-white/[0.05] active:border-accent-cyan/40">
       {/* Photo with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src={imageSrc}
           alt={name}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         {/* Gradient Overlay for Text Readability - More subtle */}
         <div className="absolute inset-0 bg-gradient-to-t from-background-dark/40 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40" />
@@ -81,12 +81,6 @@ export default function DreamTeam() {
       description: "Lidera la visión tecnológica y estratégica de TWS. Su enfoque integra la arquitectura técnica con los objetivos de negocio, asegurando que cada desarrollo sea escalable y aporte valor real. Especialista en resolver desafíos complejos, garantiza la solidez y el alto rendimiento en cada proyecto de la Software Factory."
     },
     {
-      name: "Maria Victoria Gallo",
-      role: "Product & Growth Lead",
-      imageSrc: "/DreamTeam/VickyTwsPro.jpeg",
-      description: "Responsable de convertir la visión del producto en resultados concretos. Su rol es analizar más allá de las funcionalidades técnicas, enfocándose en la viabilidad, el posicionamiento y las métricas clave. Actúa como el puente estratégico entre el diseño de la experiencia, el modelo de negocio y la expansión del producto en el mercado. Si un desarrollo escala con éxito, es producto de su planificación y análisis de oportunidades"
-    },
-    {
       name: "Mariano Ricoy",
       role: "Frontend Lead",
       imageSrc: "/DreamTeam/Marianoricoy.png",
@@ -112,9 +106,11 @@ export default function DreamTeam() {
     <section data-theme="dark" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20 flex flex-col items-center">
-          <img 
+          <Image 
             src="/Isologo.svg" 
             alt="TWS Isologo" 
+            width={20}
+            height={20}
             className="h-5 w-auto mb-6 opacity-80"
           />
           <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
@@ -122,7 +118,7 @@ export default function DreamTeam() {
           </h1>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-3xl mx-auto">
           {teamMembers.map((member, index) => (
             <TeamMemberCard
               key={index}

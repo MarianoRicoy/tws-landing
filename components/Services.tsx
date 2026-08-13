@@ -2,7 +2,6 @@
 
 import { Code, FlaskConical, Check, Plus } from 'lucide-react';
 import Link from 'next/link';
-import AnimatedText from './AnimatedText';
 import { motion, Variants } from 'framer-motion';
 import React from 'react';
 
@@ -21,13 +20,12 @@ const cardVariants: Variants = {
   }),
 };
 
-const ServiceCard = ({ icon: Icon, title, description, items, href, index, iconClassName }: {
+const ServiceCard = ({ icon: Icon, title, description, items, href, iconClassName }: {
   icon: React.ElementType;
   title: string;
   description: string;
   items: string[];
   href: string;
-  index: number;
   iconClassName?: string;
 }) => (
   <Link href={href} passHref>
@@ -99,8 +97,8 @@ export default function Services() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8">
-        {services.map((service, i) => (
-          <ServiceCard key={service.title} {...service} index={i} />
+        {services.map((service) => (
+          <ServiceCard key={service.title} {...service} />
         ))}
       </div>
     </section>

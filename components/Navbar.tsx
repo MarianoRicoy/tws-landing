@@ -5,22 +5,14 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useModal } from '@/contexts/ModalContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { openModal } = useModal();
   const router = useRouter();
   const pathname = usePathname();
-  const [isVisible, setIsVisible] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(true);
-
-  useEffect(() => {
-    setIsVisible(false);
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 100);
-    return () => clearTimeout(timer);
-  }, [pathname]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -103,18 +95,18 @@ export default function Navbar() {
 
   return (
     <AnimatePresence mode="wait">
-      {isVisible && (
-        <motion.header
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ 
-            type: "spring", 
-            stiffness: 100, 
-            damping: 20,
-            duration: 0.6 
-          }}
-          className="fixed top-0 left-0 w-full z-50 pt-10"
-        >
+      <motion.header
+        key={pathname}
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ 
+          type: "spring", 
+          stiffness: 100, 
+          damping: 20,
+          duration: 0.6 
+        }}
+        className="fixed top-0 left-0 w-full z-50 pt-10"
+      >
           <nav className="max-w-7xl mx-auto px-6">
             <div className="flex items-center justify-between md:justify-center relative">
               
@@ -125,9 +117,11 @@ export default function Navbar() {
                   className="flex items-center group"
                   onClick={handleLogoClick}
                 >
-                  <img 
+                  <Image 
                     src="/Isologo.svg" 
                     alt="TWS Isologo" 
+                    width={32}
+                    height={32}
                     className={`h-8 w-auto transition-all duration-500 group-hover:scale-110 ${!isDarkTheme ? 'invert brightness-0' : ''}`} 
                   />
                 </Link>
@@ -146,13 +140,13 @@ export default function Navbar() {
                     <span className={`font-light text-lg transition-colors duration-500 ${isDarkTheme ? 'text-white/20' : 'text-black/10'}`}>|</span>
                   </>
                 )}
-                <a 
+                <Link 
                   href="/#servicios" 
                   onClick={(e) => handleNavigation(e, '/#servicios')} 
                   className={`transition-all border-b-2 border-transparent hover:border-white pb-1`}
                 >
                   Servicios
-                </a>
+                </Link>
                 <span className={`font-light text-lg transition-colors duration-500 ${isDarkTheme ? 'text-white/20' : 'text-black/10'}`}>|</span>
                 <Link 
                   href="/nosotros" 
@@ -189,15 +183,14 @@ export default function Navbar() {
               <div className="fixed inset-x-0 top-[90px] mx-6 rounded-2xl bg-background-dark/95 backdrop-blur-xl border border-white/10 md:hidden overflow-hidden shadow-2xl z-50">
         <div className="flex flex-col py-8 px-6 gap-8 text-center text-[13px] tracking-[0.2em] font-bold text-white uppercase">
                   <Link href="/" onClick={handleLogoClick} className="hover:text-accent-cyan transition-colors py-2">Inicio</Link>
-                  <a href="/#servicios" onClick={(e) => handleNavigation(e, '/#servicios')} className="hover:text-accent-cyan transition-colors py-2">Servicios</a>
+                  <Link href="/#servicios" onClick={(e) => handleNavigation(e, '/#servicios')} className="hover:text-accent-cyan transition-colors py-2">Servicios</Link>
                   <Link href="/nosotros" onClick={(e) => handleNavigation(e, '/nosotros')} className="hover:text-accent-cyan transition-colors py-2">Nosotros</Link>
                   <button onClick={handleContactAndCloseMenu} className="text-accent-cyan font-black hover:opacity-80 transition-opacity py-4 border border-accent-cyan/20 rounded-xl bg-accent-cyan/5 mt-2">Contacto</button>
                 </div>
               </div>
             )}
-          </nav>
-        </motion.header>
-      )}
+        </nav>
+      </motion.header>
     </AnimatePresence>
   );
 }

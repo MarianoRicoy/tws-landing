@@ -4,7 +4,6 @@ import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Users, Rocket, Layout } from 'lucide-react';
 import { useModal } from '@/contexts/ModalContext';
-import Link from 'next/link';
 import Image from 'next/image';
 
 const cardVariants: Variants = {
@@ -127,10 +126,6 @@ const pillars = [
       'Digitalización de procesos'
     ]
   },
-];
-
-const technologies = [
-  'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS', 'Tailwind CSS', 'Figma'
 ];
 
 export default function SoftwareFactoryPage() {

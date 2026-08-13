@@ -2,22 +2,9 @@
 
 import { BrainCircuit, Code, Repeat } from 'lucide-react';
 import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.5,
-      ease: 'easeOut',
-    },
-  }),
-};
-
-const PillarCard = ({ icon: Icon, title, children, index }: { icon: React.ElementType, title: string, children: React.ReactNode, index: number }) => (
+const PillarCard = ({ icon: Icon, title, children }: { icon: React.ElementType, title: string, children: React.ReactNode }) => (
   <motion.div
     className="group relative bg-surface-dark/40 rounded-2xl p-8 border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2"
   >
@@ -62,8 +49,8 @@ export default function Enfoque() {
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-          {pillars.map((pillar, i) => (
-            <PillarCard key={pillar.title} icon={pillar.icon} title={pillar.title} index={i}>
+          {pillars.map((pillar) => (
+            <PillarCard key={pillar.title} icon={pillar.icon} title={pillar.title}>
               {pillar.description}
             </PillarCard>
           ))}

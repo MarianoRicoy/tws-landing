@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { Mail, Linkedin, MapPin, X, Loader2, RefreshCcw, Home } from 'lucide-react';
+import { Mail, Linkedin, X, Loader2, RefreshCcw, Home } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -28,7 +29,7 @@ const FeedbackState = ({
         border: '1px solid rgba(58, 130, 246, 0.2)'
       }}
     >
-      <img src="/Isologo.svg" alt="TWS" className="w-10 h-10" />
+      <Image src="/Isologo.svg" alt="TWS" width={40} height={40} className="w-10 h-10" />
     </div>
     
     <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
@@ -93,17 +94,9 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     setError(null);
 
     try {
-      console.log('Enviando formulario con EmailJS...');
-      
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_7a4sdz4';
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_biqm9la';
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'OTydXdpVkW09fibrJ';
-
-      console.log('Configuración detectada:', { 
-        serviceId: serviceId, 
-        templateId: templateId, 
-        publicKey: publicKey 
-      });
 
       if (!serviceId || !templateId || !publicKey) {
         throw new Error('Configuración de EmailJS incompleta.');
@@ -120,20 +113,18 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         to_email: 'info@tws.ar'
       };
 
-      console.log('Parámetros de la plantilla:', templateParams);
-
-      const result = await emailjs.send(
+      await emailjs.send(
         serviceId,
         templateId,
         templateParams,
         publicKey
       );
 
-      console.log('Resultado EmailJS:', result.text);
       setIsSent(true);
-    } catch (err: any) {
+    } catch (err) {
       console.error('Error detallado de EmailJS:', err);
-      setError(err?.text || err?.message || 'error');
+      const message = err instanceof Error ? err.message : (err as { text?: string })?.text;
+      setError(message || 'error');
     } finally {
       setIsSending(false);
     }
@@ -171,7 +162,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
           {/* Left Column - Hidden on very small screens or adjusted */}
           <div className="hidden md:flex md:col-span-4 bg-black/30 p-10 flex-col justify-between border-r border-white/5">
             <div className="w-full">
-              <img src="/Isologo.svg" alt="TWS Isologo" className="h-6 w-auto mb-10 opacity-90" />
+              <Image src="/Isologo.svg" alt="TWS Isologo" width={24} height={24} className="h-6 w-auto mb-10 opacity-90" />
               <div className="space-y-6 w-full text-left">
                 <ContactInfo icon={Mail} title="Email" value="info@tws.ar" href="mailto:info@tws.ar" />
                 <ContactInfo icon={Linkedin} title="LinkedIn" value="/company/tech-with-soul" href="https://www.linkedin.com/company/tech-with-soul" />

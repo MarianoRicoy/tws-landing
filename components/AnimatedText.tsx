@@ -8,6 +8,20 @@ interface AnimatedTextProps {
   className?: string;
 }
 
+const AnimatedWord: React.FC<{
+  word: string;
+  start: number;
+  end: number;
+  scrollYProgress: ReturnType<typeof useScroll>['scrollYProgress'];
+}> = ({ word, start, end, scrollYProgress }) => {
+  const color = useTransform(scrollYProgress, [start, end], ["rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 100)"]);
+  return (
+    <motion.span style={{ color }} className="mr-1.5">
+      {word}
+    </motion.span>
+  );
+};
+
 const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className }) => {
   const container = useRef<HTMLParagraphElement>(null);
   const { scrollYProgress } = useScroll({ target: container, offset: ['start 0.7', 'end 0.3'] });
@@ -19,11 +33,8 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className }) => {
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + (1 / words.length);
-        const color = useTransform(scrollYProgress, [start, end], ["rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 100)"]);
         return (
-          <motion.span key={i} style={{ color }} className="mr-1.5">
-            {word}
-          </motion.span>
+          <AnimatedWord key={i} word={word} start={start} end={end} scrollYProgress={scrollYProgress} />
         );
       })}
     </p>

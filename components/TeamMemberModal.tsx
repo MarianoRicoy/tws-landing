@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { X } from 'lucide-react';
+import Image from 'next/image';
 
 interface TeamMemberModalProps {
   isOpen: boolean;
@@ -41,16 +42,17 @@ const TeamMemberModal: React.FC<TeamMemberModalProps> = ({ isOpen, onClose, memb
             
             {member.imageSrc && (
               <div className="relative w-40 h-40 md:w-64 md:h-64 rounded-2xl overflow-hidden mb-6 md:mb-8 ring-1 ring-white/10 shadow-2xl">
-                <img 
+                <Image 
                   src={member.imageSrc} 
                   alt={member.name} 
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             )}
             
             <div className="hidden md:block mt-auto pt-8 border-t border-white/5 w-full">
-              <img src="/Isologo.svg" alt="TWS Logo" className="h-6 w-auto opacity-30 grayscale brightness-200" />
+              <Image src="/Isologo.svg" alt="TWS Logo" width={24} height={24} className="h-6 w-auto opacity-30 grayscale brightness-200" />
             </div>
           </div>
 
@@ -62,7 +64,7 @@ const TeamMemberModal: React.FC<TeamMemberModalProps> = ({ isOpen, onClose, memb
               ))}
             </div>
             <div className="md:hidden mt-8 pt-6 border-t border-white/5 w-full flex justify-center">
-              <img src="/Isologo.svg" alt="TWS Logo" className="h-5 w-auto opacity-30 grayscale brightness-200" />
+              <Image src="/Isologo.svg" alt="TWS Logo" width={20} height={20} className="h-5 w-auto opacity-30 grayscale brightness-200" />
             </div>
           </div>
         </div>

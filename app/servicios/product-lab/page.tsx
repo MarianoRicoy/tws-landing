@@ -4,7 +4,6 @@ import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Lightbulb, Microscope, Rocket } from 'lucide-react';
 import { useModal } from '@/contexts/ModalContext';
-import Link from 'next/link';
 import Image from 'next/image';
 
 const cardVariants: Variants = {
@@ -101,10 +100,6 @@ const pillars = [
       'Optimización continua de producto'
     ]
   },
-];
-
-const technologies = [
-  'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS', 'Tailwind CSS', 'Figma'
 ];
 
 export default function ProductLabPage() {

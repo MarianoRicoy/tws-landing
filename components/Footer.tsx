@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useModal } from '@/contexts/ModalContext';
 
 export default function Footer() {
@@ -54,7 +55,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-4 order-2 md:order-1">
-            <img src="/Isologo.svg" alt="TWS Mini Logo" className="h-5 w-auto opacity-50" />
+            <Image src="/Isologo.svg" alt="TWS Mini Logo" width={20} height={20} className="h-5 w-auto opacity-50" />
             <p className="text-[#64748b] text-xs">
               &copy; {new Date().getFullYear()} TWS Tech With Soul. Todos los derechos reservados.
             </p>
