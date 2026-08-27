@@ -1,19 +1,16 @@
-'use client';
-
-import React, { useId } from 'react';
+import React from 'react';
 
 interface FlagProps {
   className?: string;
 }
 
 export const ArgentinaFlag: React.FC<FlagProps> = ({ className }) => {
-  const id = useId();
   return (
     <svg viewBox="0 0 32 32" className={className} xmlns="http://www.w3.org/2000/svg">
-      <clipPath id={`ar-clip-${id}`}>
+      <clipPath id="ar-flag-clip">
         <circle cx="16" cy="16" r="16" />
       </clipPath>
-      <g clipPath={`url(#ar-clip-${id})`}>
+      <g clipPath="url(#ar-flag-clip)">
         <rect width="32" height="32" fill="#fff" />
         <rect width="32" height="10.66" y="0" fill="#74ACDF" />
         <rect width="32" height="10.66" y="21.34" fill="#74ACDF" />
@@ -24,15 +21,14 @@ export const ArgentinaFlag: React.FC<FlagProps> = ({ className }) => {
 };
 
 export const UsaFlag: React.FC<FlagProps> = ({ className }) => {
-  const id = useId();
   const stripeHeight = 32 / 13;
 
   return (
     <svg viewBox="0 0 32 32" className={className} xmlns="http://www.w3.org/2000/svg">
-      <clipPath id={`us-clip-${id}`}>
+      <clipPath id="us-flag-clip">
         <circle cx="16" cy="16" r="16" />
       </clipPath>
-      <g clipPath={`url(#us-clip-${id})`}>
+      <g clipPath="url(#us-flag-clip)">
         <rect width="32" height="32" fill="#fff" />
         {Array.from({ length: 7 }).map((_, i) => (
           <rect key={i} x="0" y={i * stripeHeight * 2} width="32" height={stripeHeight} fill="#B22234" />

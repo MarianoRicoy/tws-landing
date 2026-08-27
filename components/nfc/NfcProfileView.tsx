@@ -123,7 +123,7 @@ const NfcProfileView: React.FC<NfcProfileViewProps> = ({
           >
             {lang === 'es' ? <UsaFlag className="w-full h-full" /> : <ArgentinaFlag className="w-full h-full" />}
           </button>
-          <ShareButton url={pageUrl} title={name} />
+          <ShareButton url={pageUrl} name={name} role={t.role} photoSrc={photoSrc} />
         </div>
       </div>
 
