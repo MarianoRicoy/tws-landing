@@ -6,14 +6,20 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactModal from '@/components/ContactModal';
 import { ModalProvider, useModal } from '@/contexts/ModalContext';
+import { usePathname } from 'next/navigation';
 
 const outfit = Outfit({ 
   subsets: ['latin'],
   weight: ['400', '600', '700', '800'] 
 });
 
+// Standalone NFC card views render without the site chrome (Navbar/Footer/ContactModal).
+const STANDALONE_ROUTES = ['/marianoricoy', '/ezequielpetruzzi'];
+
 function AppLayout({ children }: { children: React.ReactNode }) {
   const { isModalOpen, closeModal } = useModal();
+  const pathname = usePathname();
+  const isStandalone = STANDALONE_ROUTES.includes(pathname);
 
   return (
     <html lang="en">
@@ -26,15 +32,18 @@ function AppLayout({ children }: { children: React.ReactNode }) {
         {/* Background Mesh Grid */}
         <div className="fixed inset-0 bg-mesh-grid opacity-20 pointer-events-none -z-10" />
         
-        {/* Main Content Container */}
-        <div className="relative z-0 flex flex-col min-h-screen">
-          <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-        </div>
-        <ContactModal isOpen={isModalOpen} onClose={closeModal} />
+        {isStandalone ? (
+          children
+        ) : (
+          <div className="relative z-0 flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        )}
+        {!isStandalone && <ContactModal isOpen={isModalOpen} onClose={closeModal} />}
       </body>
     </html>
   );
