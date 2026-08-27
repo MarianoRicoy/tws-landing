@@ -6,6 +6,7 @@ import { Contact, Linkedin, MessageCircle, Globe, ChevronRight } from 'lucide-re
 import { ArgentinaFlag, UsaFlag } from './FlagIcon';
 import ShareButton from './ShareButton';
 import { downloadVCard } from '@/lib/vcard';
+import InfiniteMarquee from '@/components/InfiniteMarquee';
 
 type Lang = 'es' | 'en';
 
@@ -166,10 +167,10 @@ const NfcProfileView: React.FC<NfcProfileViewProps> = ({
       </div>
 
       {/* Marquee */}
-      <div className="w-full overflow-hidden mb-6">
-        <div className="flex animate-marquee whitespace-nowrap" style={{ '--animation-duration': '30s' } as React.CSSProperties}>
-          {Array.from({ length: 8 }).map((_, i) => (
-            <React.Fragment key={i}>
+      <div className="w-full mb-6">
+        <InfiniteMarquee speed="25s" pauseOnHover={false}>
+          {Array.from({ length: 10 }).map((_, i) => (
+            <div key={i} className="flex items-center shrink-0">
               <span className="text-[11px] uppercase tracking-[0.2em] text-white/25 font-semibold mx-4">
                 NERDEARLA 2026
               </span>
@@ -178,9 +179,9 @@ const NfcProfileView: React.FC<NfcProfileViewProps> = ({
                 TECH WITH SOUL
               </span>
               <Image src="/Isologo.svg" alt="" width={12} height={12} className="opacity-30 shrink-0" />
-            </React.Fragment>
+            </div>
           ))}
-        </div>
+        </InfiniteMarquee>
       </div>
 
       {/* Footer text */}
