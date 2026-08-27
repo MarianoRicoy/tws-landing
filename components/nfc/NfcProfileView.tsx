@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Contact, Linkedin, MessageCircle, Globe, ChevronRight } from 'lucide-react';
+import { Contact, Linkedin, MessageCircle, ChevronRight } from 'lucide-react';
 import { ArgentinaFlag, UsaFlag } from './FlagIcon';
 import ShareButton from './ShareButton';
 import { downloadVCard } from '@/lib/vcard';
@@ -160,7 +160,7 @@ const NfcProfileView: React.FC<NfcProfileViewProps> = ({
           href={linkedinUrl}
         />
         <ActionRow
-          icon={<Globe size={17} className="text-white/80" />}
+          icon={<Image src="/Isologo.svg" alt="TWS" width={16} height={16} className="opacity-90" />}
           label={t.website}
           href={websiteUrl}
         />
