@@ -16,7 +16,7 @@ const InfiniteMarquee: React.FC<InfiniteMarqueeProps> = ({
   } as React.CSSProperties;
 
   return (
-    <div className="w-full overflow-hidden py-12 group">
+    <div className="w-full overflow-hidden py-12 group select-none cursor-default">
       <div className="relative flex">
         <div 
           className={`flex animate-marquee whitespace-nowrap ${pauseOnHover ? 'group-hover:[animation-play-state:paused]' : ''}`}
