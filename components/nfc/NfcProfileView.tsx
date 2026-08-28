@@ -168,7 +168,7 @@ const NfcProfileView: React.FC<NfcProfileViewProps> = ({
 
       {/* Marquee */}
       <div className="w-full mb-6">
-        <InfiniteMarquee speed="25s" pauseOnHover={false}>
+        <InfiniteMarquee speed="25s">
           {Array.from({ length: 10 }).map((_, i) => (
             <div key={i} className="flex items-center shrink-0">
               <span className="text-[11px] uppercase tracking-[0.2em] text-white/25 font-semibold mx-4">

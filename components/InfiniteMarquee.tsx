@@ -9,7 +9,7 @@ interface InfiniteMarqueeProps {
 const InfiniteMarquee: React.FC<InfiniteMarqueeProps> = ({ 
   children,
   speed = '40s',
-  pauseOnHover = true 
+  pauseOnHover = false 
 }) => {
   const marqueeStyle = {
     '--animation-duration': speed,
