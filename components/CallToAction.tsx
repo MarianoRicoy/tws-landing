@@ -9,10 +9,10 @@ export default function CallToAction() {
     <section data-theme="dark" className="relative py-24 md:py-32 text-center overflow-hidden">
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-5">
-          ¿Listo para dar el siguiente paso?
+          ¿Construimos algo que genere impacto?
         </h2>
         <p className="text-muted-white/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-          Conversemos sobre cómo TWS puede impulsar su crecimiento con soluciones tecnológicas de alto impacto.
+          Conversemos sobre tu próximo producto, desafío tecnológico o proyecto de inteligencia artificial.
         </p>
         <button 
           onClick={openModal}
