@@ -73,31 +73,31 @@ const pillars = [
   {
     icon: Lightbulb,
     title: 'Discovery & Estrategia',
-    description: 'No empezamos con código, empezamos con preguntas. Validamos la viabilidad técnica y de mercado para asegurar que cada línea de desarrollo tenga un propósito de negocio claro.',
+    description: 'No empezamos con código, empezamos con preguntas. Analizamos el problema, el mercado y la viabilidad de la idea antes de definir qué producto vale la pena construir.',
     points: [
       'Análisis de viabilidad técnica',
       'Definición de propuesta de valor',
-      'Roadmap de producto estratégico'
+      'Roadmap de producto'
     ]
   },
   {
     icon: Microscope,
     title: 'Prototipado Ágil',
-    description: 'Construimos versiones funcionales de alta fidelidad en ciclos cortos. Este enfoque nos permite iterar sobre feedback real antes de comprometer recursos masivos.',
+    description: 'Convertimos la idea en una primera versión funcional para validar rápido, aprender con usuarios reales y tomar decisiones antes de escalar la inversión.',
     points: [
-      'Iteraciones rápidas (Sprints)',
+      'Iteraciones rápidas',
       'Validación con usuarios reales',
-      'Ajuste constante según feedback'
+      'Evolución basada en feedback'
     ]
   },
   {
     icon: Rocket,
     title: 'Lanzamiento & Escalado',
-    description: 'Desplegamos productos con arquitectura preparada para el tráfico real. Monitoreamos métricas clave y optimizamos el producto basado en datos.',
+    description: 'Llevamos el producto al mercado con una arquitectura preparada para evolucionar. Medimos resultados, aprendemos y optimizamos continuamente.',
     points: [
-      'Arquitectura lista para el mercado',
-      'Monitoreo de métricas clave',
-      'Optimización continua de producto'
+      'Arquitectura preparada para crecer',
+      'Métricas y aprendizaje real',
+      'Evolución continua del producto'
     ]
   },
 ];
@@ -125,7 +125,7 @@ export default function ProductLabPage() {
             </h1>
             
             <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
-              El Product Lab es nuestro espacio de innovación. Aquí creamos herramientas digitales enfocadas en resolver problemas reales del mercado, diseñadas para ser escalables, eficientes y aportar valor desde el primer día.
+              Product Lab es nuestro espacio de innovación y experimentación. Identificamos problemas y oportunidades, validamos ideas y las convertimos en productos digitales diseñados para generar valor y evolucionar en el mercado.
             </p>
           </motion.div>
         </div>
@@ -198,7 +198,7 @@ export default function ProductLabPage() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight"
           >
-            ¿Querés conocer nuestros <br /> <span className="text-accent-cyan">proyectos activos?</span>
+            ¿Tenés una idea que puede convertirse en <span className="text-accent-cyan">producto?</span>
           </motion.h2>
           
           <motion.p 
@@ -208,7 +208,7 @@ export default function ProductLabPage() {
             transition={{ delay: 0.1 }}
             className="text-lg text-muted-white mb-12 max-w-2xl mx-auto font-medium"
           >
-            te invitamos a descubrir nuestro catálogo de soluciones tecnológicas
+            Conversemos sobre cómo validarla, diseñarla y transformarla en una solución digital real.
           </motion.p>
           
           <motion.div 

@@ -217,10 +217,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                         className="w-full bg-[#181C26]/50 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-accent-cyan transition-all appearance-none cursor-pointer"
                       >
                         <option value="Consulta General">Consulta General</option>
-                        <option value="Presupuestos">Presupuestos</option>
-                        <option value="Software Factory">Software Factory</option>
+                        <option value="Software Engineering">Software Engineering</option>
+                        <option value="AI Engineering">AI Engineering</option>
                         <option value="Product Lab">Product Lab</option>
-                        <option value="Carreras">Carreras</option>
+                        <option value="Alianzas y oportunidades">Alianzas y oportunidades</option>
                       </select>
                       <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-[#64748b]">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -234,7 +234,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                       name="message"
                       required
                       rows={4} 
-                      placeholder="Cuéntanos cómo podemos ayudarte..." 
+                      placeholder="Contanos sobre tu proyecto o desafío..." 
                       className="w-full bg-[#181C26]/50 border border-white/10 rounded-xl p-3 text-white placeholder:text-[#64748b] focus:outline-none focus:border-accent-cyan transition-all"
                     ></textarea>
                   </div>

@@ -95,35 +95,35 @@ const PillarCard = ({
 const pillars = [
   {
     icon: Layout,
-    title: 'Presencia Digital de Alto Impacto',
+    title: 'Productos Digitales de Alto Impacto',
     tags: ['Web', 'Mobile', 'UI/UX'],
-    description: 'Creamos plataformas web y aplicaciones móviles que no solo se ven bien, sino que funcionan a la perfección. Diseñamos experiencias pensadas para que tus clientes naveguen con facilidad y tu negocio pueda escalar sin límites técnicos.',
+    description: 'Creamos plataformas web y aplicaciones móviles rápidas, intuitivas y preparadas para escalar. Diseñamos experiencias digitales donde tecnología, producto y negocio trabajan juntos.',
     points: [
-      'Experiencia de usuario (UX) fluida',
-      'Velocidad de carga optimizada',
-      'Adaptable a cualquier dispositivo'
+      'Experiencia de usuario (UX)',
+      'Alto rendimiento',
+      'Arquitectura responsiva y escalable'
     ]
   },
   {
     icon: Users,
-    title: 'Equipos Expertos a tu Medida',
+    title: 'Sistemas y Plataformas a Medida',
     tags: ['Senior', 'Agile', 'DevOps'],
-    description: 'Si ya tienes un proyecto en marcha pero necesitas más potencia de fuego, te brindamos profesionales senior que se integran a tu equipo actual. Es la forma más rápida de acelerar tus desarrollos con el respaldo de ingenieros que entienden tus objetivos.',
+    description: 'Diseñamos y desarrollamos sistemas que se adaptan a procesos y necesidades específicas. Desde plataformas de gestión hasta soluciones integradas con infraestructura, servicios y herramientas existentes.',
     points: [
-      'Integración inmediata al equipo',
-      'Reducción de tiempos de entrega',
-      'Experiencia técnica comprobada'
+      'Arquitectura a medida',
+      'Integraciones y automatización',
+      'Sistemas seguros y escalables'
     ]
   },
   {
     icon: Rocket,
-    title: 'De la Idea al Producto Real',
+    title: 'Convertimos ideas y procesos en productos digitales reales',
     tags: ['Startup', 'MVP', 'Scale'],
-    description: 'Ideal para empresas que necesitan validar y digitalizar sus procesos rápidamente. Construimos una primera versión sólida de tu producto para que puedas lanzarla al mercado, optimizar operaciones y escalar con bases técnicas seguras.',
+    description: 'Diseñamos, validamos y construimos una primera versión sólida, preparada para evolucionar, escalar y llegar al mercado.',
     points: [
-      'Lanzamiento ágil al mercado',
+      'MVP y validación',
       'Arquitectura sólida y escalable',
-      'Digitalización de procesos'
+      'Evolución continua del producto'
     ]
   },
 ];
@@ -143,15 +143,15 @@ export default function SoftwareFactoryPage() {
             className="flex flex-col items-center space-y-8"
           >
             <p className="text-base text-accent-cyan tracking-widest uppercase font-semibold" style={{ textShadow: '0 0 25px rgba(58, 130, 246, 0.8)' }}>
-              SOFTWARE FACTORY
+              SOFTWARE ENGINEERING
             </p>
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-              Ingeniería de Software <br /> para <span className="text-accent-cyan">Empresas en Crecimiento</span>
+              Ingeniería de Software <br /> <span className="text-accent-cyan">para Empresas en Crecimiento</span>
             </h1>
             
             <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
-              Transformamos la complejidad técnica en ventaja competitiva. Nuestro enfoque de Software Factory combina la excelencia artesanal del código con procesos industriales de entrega continua.
+              Transformamos desafíos tecnológicos en soluciones robustas, escalables y preparadas para crecer. Combinamos arquitectura, ingeniería y visión de producto para construir software que genera valor real.
             </p>
           </motion.div>
         </div>
@@ -225,7 +225,7 @@ export default function SoftwareFactoryPage() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight"
           >
-            ¿Listo para escalar tu <br /> <span className="text-accent-cyan">infraestructura técnica?</span>
+            ¿Tenés un <span className="text-accent-cyan">desafío tecnológico?</span>
           </motion.h2>
           
           <motion.p 
@@ -235,7 +235,7 @@ export default function SoftwareFactoryPage() {
             transition={{ delay: 0.1 }}
             className="text-lg text-muted-white mb-12 max-w-2xl mx-auto font-medium"
           >
-            Analicemos juntos los requerimientos de tu proyecto y diseñemos una solución a medida que impulse tu crecimiento.
+            Conversemos sobre tu proyecto y diseñemos una solución de software pensada para resolverlo, crecer y evolucionar.
           </motion.p>
           
           <motion.div 
