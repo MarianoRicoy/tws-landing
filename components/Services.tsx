@@ -1,6 +1,6 @@
 'use client';
 
-import { Code, FlaskConical, Check, Plus } from 'lucide-react';
+import { Code, FlaskConical, BrainCircuit, Check, Plus } from 'lucide-react';
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 import React from 'react';
@@ -68,17 +68,25 @@ const ServiceCard = ({ icon: Icon, title, description, items, href, iconClassNam
 const services = [
   {
     icon: Code,
-    title: 'Software Factory',
-    description: 'Desarrollamos soluciones tecnológicas de alto impacto para empresas que buscan escalar. Código limpio, arquitectura escalable y entrega ágil.',
-    items: ['Creación de Apps', 'Desarrollo Web a Medida', 'Sistemas de Gestión'],
+    title: 'Software Engineering',
+    description: 'Diseñamos y desarrollamos soluciones digitales de alto impacto, con arquitecturas robustas, seguras y preparadas para escalar.',
+    items: ['Aplicaciones Web y Mobile', 'Plataformas y Sistemas a Medida', 'Arquitectura e Integraciones'],
     href: '/servicios/software-factory',
+    iconClassName: 'text-white'
+  },
+  {
+    icon: BrainCircuit,
+    title: 'AI Engineering',
+    description: 'Diseñamos sistemas de inteligencia artificial que combinan modelos, agentes, conocimiento y herramientas para automatizar procesos y potenciar capacidades.',
+    items: ['Sistemas y Agentes de IA', 'IA Privada y Conocimiento Empresarial', 'Automatización Inteligente'],
+    href: '/servicios/ai-engineering',
     iconClassName: 'text-white'
   },
   {
     icon: FlaskConical,
     title: 'Product Lab',
-    description: 'Nuestra incubadora interna. Detectamos problemas reales y construimos productos SaaS propios para resolverlos. Innovación sin intermediarios.',
-    items: ['Incubación de Ideas', 'Desarrollo de Productos Propios', 'Experimentación Continua'],
+    description: 'Nuestro laboratorio de productos. Identificamos problemas y oportunidades, validamos ideas y construimos soluciones digitales propias con potencial de mercado.',
+    items: ['Incubación y Validación de Ideas', 'Desarrollo de Productos Propios', 'Experimentación Continua'],
     href: '/servicios/product-lab',
     iconClassName: 'text-white'
   }
@@ -96,7 +104,7 @@ export default function Services() {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
         {services.map((service) => (
           <ServiceCard key={service.title} {...service} />
         ))}

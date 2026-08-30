@@ -27,9 +27,9 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h4 className="text-white font-bold mb-6 tracking-wider uppercase text-xs">Servicios</h4>
             <ul className="space-y-4 text-[#94a3b8]">
-              <li><Link href="/#servicios" className="hover:text-accent-cyan transition-colors">Desarrollo Web</Link></li>
-              <li><Link href="/#servicios" className="hover:text-accent-cyan transition-colors">Aplicaciones Móviles</Link></li>
-              <li><Link href="/#servicios" className="hover:text-accent-cyan transition-colors">Consultoría</Link></li>
+              <li><Link href="/#servicios" className="hover:text-accent-cyan transition-colors">Software Engineering</Link></li>
+              <li><Link href="/#servicios" className="hover:text-accent-cyan transition-colors">AI Engineering</Link></li>
+              <li><Link href="/#servicios" className="hover:text-accent-cyan transition-colors">Product Lab</Link></li>
             </ul>
           </div>
 

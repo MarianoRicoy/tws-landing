@@ -20,9 +20,12 @@ export default function TechStack() {
   return (
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-xs md:text-sm font-semibold text-accent-cyan tracking-[0.3em] uppercase text-center mb-12" style={{ textShadow: '0 0 25px rgba(58, 130, 246, 0.8)' }}>
-          Tecnologías que impulsan nuestros productos
+        <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] md:text-5xl font-bold text-white text-center mb-4">
+          Tecnologías que Impulsan <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Nuestros Productos</span>
         </h2>
+        <p className="text-muted-white/80 max-w-2xl mx-auto text-base md:text-lg text-center mb-12">
+          Elegimos cada tecnología por su capacidad de resolver el problema, no por seguir una tendencia.
+        </p>
         
         <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
           <InfiniteMarquee speed="30s">
