@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center text-center space-y-8 md:space-y-12">
           <p className="text-[9px] md:text-xs text-accent-cyan tracking-[0.3em] md:tracking-[0.4em] uppercase font-bold" style={{ textShadow: '0 0 20px rgba(58, 130, 246, 0.6)' }}>
-            DESARROLLO DE SOFTWARE + PRODUCTOS
+            SOFTWARE · INTELIGENCIA ARTIFICIAL · DESARROLLO DE SOFTWARE + PRODUCTOS
           </p>
 
           <h1 className="text-[2.75rem] leading-[1.1] md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white max-w-5xl">
@@ -20,7 +20,7 @@ export default function Hero() {
           </h1>
           
           <p className="text-base md:text-xl text-slate-400 max-w-xl mx-auto leading-relaxed font-medium px-2 md:px-0">
-            Desarrollamos aplicaciones web, plataformas móviles y sistemas a medida. Ayudamos a empresas a escalar con software de alta calidad y creamos nuestros propios productos digitales.
+            Diseñamos y construimos software, productos digitales y sistemas de inteligencia artificial para resolver problemas reales. Combinamos ingeniería, IA y visión de producto para transformar ideas en tecnología que genera valor.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 pt-2 md:pt-4 w-full sm:w-auto px-4 md:px-0">
