@@ -14,10 +14,10 @@ export default function NuestraHistoria() {
           <div className="text-left md:col-span-2">
             <div className="text-white/90 space-y-4 leading-relaxed text-lg font-medium">
               <p>
-                TWS surge de la sinergia de un equipo técnico multidisciplinario en un entorno de alto rendimiento. Al enfrentar desafíos complejos, confirmamos que la clave de toda gran solución es entender el negocio detrás del código. Integramos visión estratégica, diseño de producto y desarrollo a medida para crear herramientas que realmente aporten valor.
+                TWS nace de la unión de ingeniería, producto y una forma diferente de entender la tecnología. Frente a desafíos complejos, buscamos comprender primero el problema y el negocio antes de diseñar una solución. Combinamos estrategia, ingeniería de software e inteligencia artificial para construir tecnología que aporte valor real.
               </p>
               <p>
-                Hoy somos un socio tecnológico estratégico con una misión clara: construir ecosistemas digitales robustos, escalables y eficientes que impulsen el crecimiento de las empresas. Porque cuando la solidez técnica y los objetivos de negocio se alinean, la innovación se convierte en resultados tangibles.
+                Hoy desarrollamos software, sistemas de inteligencia artificial y productos digitales con una misma misión: convertir problemas y oportunidades en soluciones robustas, escalables y con propósito. Creemos que la mejor tecnología no es necesariamente la más compleja, sino la que logra generar un impacto real.
               </p>
             </div>
           </div>

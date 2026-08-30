@@ -76,15 +76,15 @@ export default function DreamTeam() {
   const teamMembers = [
     {
       name: "Ezequiel Petruzzi",
-      role: "CEO / CTO",
+      role: "FOUNDER · CEO & CTO",
       imageSrc: "/DreamTeam/EzeTwsTeam.png",
-      description: "Lidera la visión tecnológica y estratégica de TWS. Su enfoque integra la arquitectura técnica con los objetivos de negocio, asegurando que cada desarrollo sea escalable y aporte valor real. Especialista en resolver desafíos complejos, garantiza la solidez y el alto rendimiento en cada proyecto de la Software Factory."
+      description: "Lidera la visión estratégica y tecnológica de TWS, conectando arquitectura, ingeniería, inteligencia artificial y negocio. Su enfoque está orientado a transformar problemas complejos en soluciones escalables, tomando decisiones tecnológicas con una mirada integral sobre el producto y su impacto."
     },
     {
       name: "Mariano Ricoy",
-      role: "Frontend Lead",
+      role: "FOUNDER · LEAD SOFTWARE ENGINEER",
       imageSrc: "/DreamTeam/Marianoricoy.png",
-      description: "Lidera la construcción visual e interactiva de nuestros desarrollos. Combina un diseño de interfaz riguroso (pixel-perfect) con arquitectura frontend moderna para crear productos digitales que no solo destacan visualmente, sino que garantizan la mejor experiencia de usuario. Su especialidad es hacer que lo complejo parezca y se sienta simple."
+      description: "Founder de TWS y referente técnico en la construcción de productos digitales. Lidera la ejecución y evolución de soluciones, combinando ingeniería de software, experiencia de usuario y una mirada práctica orientada a convertir ideas y desafíos en productos sólidos, intuitivos y de alta calidad."
     }
   ];
 
