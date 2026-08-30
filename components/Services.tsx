@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 import React from 'react';
 
-const servicesText = 'Fusionamos la precisión de una software factory con la audacia de un product lab, creando soluciones robustas y explorando nuevas fronteras tecnológicas.';
+const servicesText = 'Combinamos ingeniería de software, inteligencia artificial y desarrollo de producto para construir soluciones reales y explorar nuevas fronteras tecnológicas.';
 
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -89,7 +89,7 @@ export default function Services() {
     <section id="servicios" className="pt-12 pb-24 md:pt-16 md:pb-32">
       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
           <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] md:text-5xl font-bold text-white mb-6">
-          Un Ecosistema <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Híbrido</span>
+          Un Ecosistema de <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">Ingeniería e IA</span>
         </h2>
         <p className="text-muted-white/80 max-w-2xl mx-auto text-base md:text-lg">
           {servicesText}

@@ -25,17 +25,17 @@ const pillars = [
   {
     icon: BrainCircuit,
     title: 'Estrategia y Diseño',
-    description: 'Antes de escribir una línea de código, definimos la arquitectura y el roadmap del producto. Pensamos para escalar.',
+    description: 'Antes de escribir una línea de código, entendemos el problema, definimos la arquitectura y trazamos el roadmap. Diseñamos pensando en el producto, el negocio y su capacidad de escalar.',
   },
   {
     icon: Code,
     title: 'Ingeniería y Ejecución',
-    description: 'Construimos con código limpio y las mejores prácticas. Creamos soluciones robustas, seguras y de alto rendimiento.',
+    description: 'Construimos soluciones robustas, seguras y escalables, combinando ingeniería de software, inteligencia artificial y buenas prácticas de desarrollo.',
   },
   {
     icon: Repeat,
     title: 'Iteración e Impacto',
-    description: 'Lanzamos, medimos y optimizamos. Creemos en la mejora continua para maximizar el impacto en el usuario final.',
+    description: 'Lanzamos, medimos y evolucionamos. La tecnología no termina con el deploy: mejoramos continuamente el producto a partir de resultados reales.',
   },
 ];
 
