@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center text-center space-y-8 md:space-y-12">
           <p className="text-[9px] md:text-xs text-accent-cyan tracking-[0.3em] md:tracking-[0.4em] uppercase font-bold" style={{ textShadow: '0 0 20px rgba(58, 130, 246, 0.6)' }}>
-            SOFTWARE · INTELIGENCIA ARTIFICIAL · DESARROLLO DE SOFTWARE + PRODUCTOS
+            software - inteligencia artificial
           </p>
 
           <h1 className="text-[2.75rem] leading-[1.1] md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white max-w-5xl">
