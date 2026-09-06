@@ -232,7 +232,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               <FeedbackState type="error" onClose={handleClose} onRetry={handleRetry} />
             ) : (
               <>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">Ponte en contacto</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
+                  Ponte en{' '}
+                  <span className="inline-block pr-[0.08em] bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">
+                    contacto
+                  </span>
+                </h2>
                 <p className="text-[#94a3b8] mb-6 text-sm md:text-base">¿Tienes dudas? Estamos aquí para escucharte.</p>
                 <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 md:space-y-0">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
