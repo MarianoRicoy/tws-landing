@@ -121,7 +121,10 @@ export default function ProductLabPage() {
             </p>
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-              Diseño y Creación de Productos <br /> <span className="text-accent-cyan text-glow">Digitales</span>
+              Diseño y Creación de Productos <br />{' '}
+              <span className="inline-block pr-[0.08em] bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">
+                Digitales
+              </span>
             </h1>
             
             <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
@@ -198,7 +201,10 @@ export default function ProductLabPage() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight"
           >
-            ¿Tenés una idea que puede convertirse en <span className="text-accent-cyan">producto?</span>
+            ¿Tenés una idea que puede convertirse en{' '}
+            <span className="inline-block pr-[0.08em] bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">
+              producto?
+            </span>
           </motion.h2>
           
           <motion.p 

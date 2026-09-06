@@ -16,7 +16,10 @@ export default function Hero() {
           </p>
 
           <h1 className="text-[2.75rem] leading-[1.1] md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white max-w-5xl">
-            Tecnología con <span className="text-accent-cyan">Propósito</span>
+            Tecnología con{' '}
+            <span className="inline-block pr-[0.08em] bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">
+              Propósito
+            </span>
           </h1>
           
           <p className="text-base md:text-xl text-slate-400 max-w-xl mx-auto leading-relaxed font-medium px-2 md:px-0">
@@ -26,12 +29,12 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 pt-2 md:pt-4 w-full sm:w-auto px-4 md:px-0">
             <button 
               onClick={openModal}
-              className="px-8 md:px-10 py-4 rounded-md bg-accent-cyan border border-accent-cyan text-white font-bold text-sm hover:opacity-90 hover:shadow-md hover:shadow-accent-cyan/10 transition-all hover:scale-105 active:scale-95 text-center w-full sm:w-auto shadow-md shadow-accent-cyan/10">
+              className="px-8 md:px-10 py-4 rounded-md bg-accent-cyan border border-accent-cyan text-white font-bold text-sm hover:text-accent-cyan hover:bg-accent-cyan/10 hover:border-accent-cyan/60 hover:shadow-md hover:shadow-accent-cyan/10 transition-all hover:scale-105 active:scale-95 text-center w-full sm:w-auto shadow-md shadow-accent-cyan/10">
               Agendar Reunión
             </button>
             <button 
               onClick={openModal}
-              className="px-8 md:px-10 py-4 rounded-md border border-white/10 text-white/80 font-bold text-sm hover:bg-accent-cyan hover:text-white hover:border-accent-cyan hover:shadow-md hover:shadow-accent-cyan/10 transition-all hover:scale-105 active:scale-95 text-center w-full sm:w-auto">
+              className="px-8 md:px-10 py-4 rounded-md bg-accent-cyan/5 border border-accent-cyan/40 text-white font-bold text-sm hover:text-accent-cyan hover:bg-accent-cyan/10 hover:border-accent-cyan/60 hover:shadow-md hover:shadow-accent-cyan/10 transition-all hover:scale-105 active:scale-95 text-center w-full sm:w-auto">
               Solicitar Presupuesto
             </button>
           </div>

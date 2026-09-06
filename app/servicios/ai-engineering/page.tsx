@@ -184,7 +184,9 @@ export default function AIEngineeringPage() {
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
               Inteligencia Artificial <br />{' '}
-              <span className="text-accent-cyan">aplicada a problemas reales</span>
+              <span className="inline-block pr-[0.08em] bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">
+                aplicada a problemas reales
+              </span>
             </h1>
 
             <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
@@ -259,7 +261,9 @@ export default function AIEngineeringPage() {
             className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight"
           >
             ¿Tenés un desafío donde la IA pueda hacer la{' '}
-            <span className="text-accent-cyan">diferencia?</span>
+            <span className="inline-block pr-[0.08em] bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">
+              diferencia?
+            </span>
           </motion.h2>
 
           <motion.p

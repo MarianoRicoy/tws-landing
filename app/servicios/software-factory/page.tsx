@@ -147,7 +147,10 @@ export default function SoftwareFactoryPage() {
             </p>
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-              Ingeniería de Software <br /> <span className="text-accent-cyan">para Empresas en Crecimiento</span>
+              Ingeniería de Software <br />{' '}
+              <span className="inline-block pr-[0.08em] bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">
+                para Empresas en Crecimiento
+              </span>
             </h1>
             
             <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
@@ -225,7 +228,10 @@ export default function SoftwareFactoryPage() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight"
           >
-            ¿Tenés un <span className="text-accent-cyan">desafío tecnológico?</span>
+            ¿Tenés un{' '}
+            <span className="inline-block pr-[0.08em] bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">
+              desafío tecnológico?
+            </span>
           </motion.h2>
           
           <motion.p 

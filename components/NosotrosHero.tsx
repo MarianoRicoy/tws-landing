@@ -7,7 +7,10 @@ export default function NosotrosHero() {
             CONÓCENOS
           </p>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-            Creamos tecnología <br /> con <span className="text-accent-cyan">alma digital</span>
+            Creamos tecnología <br /> con{' '}
+            <span className="inline-block pr-[0.08em] bg-clip-text text-transparent bg-gradient-to-r from-white to-accent-cyan/80">
+              alma digital
+            </span>
           </h1>
           <p className="text-lg text-muted-white max-w-3xl mx-auto leading-relaxed">
             Somos un equipo multidisciplinario dedicado a transformar ideas complejas en soluciones digitales de alto impacto. No solo escribimos código, construimos futuro.
