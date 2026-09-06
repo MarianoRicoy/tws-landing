@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { Mail, Linkedin, X, Loader2, RefreshCcw, Home } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import Link from 'next/link';
@@ -75,6 +76,58 @@ const ContactInfo = ({ icon: Icon, title, value, href }: { icon: React.ElementTy
     </div>
   </a>
 );
+
+const TAGLINE = 'Tecnología con Propósito';
+const LETTER_STAGGER = 0.055;
+const WAVE_STAGGER = 0.07;
+
+function AnimatedTagline() {
+  const letters = TAGLINE.split('');
+  const waveStart = letters.length * LETTER_STAGGER + 0.4;
+
+  return (
+    <p className="text-sm font-semibold italic tracking-wide" aria-label={TAGLINE}>
+      {letters.map((char, i) => (
+        <motion.span
+          key={`${i}-${char}`}
+          className="inline-block"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            scale: [1, 1.18, 1],
+            color: ['#3b82f6', '#bfdbfe', '#3b82f6'],
+          }}
+          transition={{
+            opacity: {
+              duration: 0.35,
+              delay: i * LETTER_STAGGER,
+              ease: [0.22, 1, 0.36, 1],
+            },
+            y: {
+              duration: 0.35,
+              delay: i * LETTER_STAGGER,
+              ease: [0.22, 1, 0.36, 1],
+            },
+            scale: {
+              duration: 0.45,
+              delay: waveStart + i * WAVE_STAGGER,
+              ease: 'easeInOut',
+            },
+            color: {
+              duration: 0.45,
+              delay: waveStart + i * WAVE_STAGGER,
+              ease: 'easeInOut',
+            },
+          }}
+          style={{ minWidth: char === ' ' ? '0.25em' : undefined }}
+        >
+          {char === ' ' ? '\u00A0' : char}
+        </motion.span>
+      ))}
+    </p>
+  );
+}
 
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -168,9 +221,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 <ContactInfo icon={Linkedin} title="LinkedIn" value="/company/tech-with-soul" href="https://www.linkedin.com/company/tech-with-soul" />
               </div>
             </div>
-            <p className="text-sm font-semibold italic tracking-wide" style={{ color: '#3b82f6', textShadow: '0 0 15px rgba(58, 130, 246, 0.6)' }}>
-              Tecnología con Propósito
-            </p>
+            <AnimatedTagline />
           </div>
 
           {/* Right Column */}
