@@ -6,6 +6,11 @@ export default function MarianoRicoyPage() {
       name="Mariano Ricoy"
       photoSrc="/DreamTeam/Marianoricoy.png"
       bannerSrc="/nfc/MeetandWork-sin marca.jpg"
+      featuredProject={{
+        title: 'Plataforma integral de inteligencia ganadera',
+        imageSrc: '/nfc/inteligencia-ganadera.png',
+        href: '/labs/inteligencia-ganadera',
+      }}
       vcard={{
         firstName: 'Mariano',
         lastName: 'Ricoy',

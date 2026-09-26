@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Contact, Linkedin, MessageCircle, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import { Contact, Linkedin, MessageCircle, ChevronRight, ArrowRight } from 'lucide-react';
 import { ArgentinaFlag, UsaFlag } from './FlagIcon';
 import ShareButton from './ShareButton';
 import { downloadVCard } from '@/lib/vcard';
@@ -24,6 +25,11 @@ export interface NfcProfileViewProps {
   name: string;
   photoSrc: string;
   bannerSrc: string;
+  featuredProject?: {
+    title: string;
+    imageSrc: string;
+    href?: string;
+  };
   vcard: {
     firstName: string;
     lastName: string;
@@ -82,6 +88,7 @@ const NfcProfileView: React.FC<NfcProfileViewProps> = ({
   name,
   photoSrc,
   bannerSrc,
+  featuredProject,
   vcard,
   phone,
   email,
@@ -137,10 +144,36 @@ const NfcProfileView: React.FC<NfcProfileViewProps> = ({
         <p className="text-sm text-white/50 leading-relaxed max-w-xs">{t.bio}</p>
       </div>
 
-      {/* Banner Image */}
-      <div className="w-full max-w-sm relative aspect-[21/9] rounded-2xl overflow-hidden border border-white/10 shadow-2xl mb-8">
-        <Image src={bannerSrc} alt="TWS" fill className="object-cover" />
-      </div>
+      {/* Featured Project / Banner */}
+      {featuredProject ? (
+        (() => {
+          const cardContent = (
+            <>
+              <div className="relative w-full aspect-[3/2]">
+                <Image src={featuredProject.imageSrc} alt={featuredProject.title} fill className="object-cover" />
+              </div>
+              <div className="flex items-center justify-between h-11 px-4 border-t border-white/10 bg-surface-dark/40 group-hover:bg-white/[0.06] transition-colors">
+                <span className="text-sm font-semibold text-white/90">Conocé el proyecto</span>
+                <ArrowRight size={16} className="text-accent-cyan" />
+              </div>
+            </>
+          );
+          const cardClassName =
+            'group block w-full max-w-sm rounded-2xl overflow-hidden border border-white/10 shadow-2xl mb-8 transition-colors hover:border-accent-cyan/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan/50';
+
+          return featuredProject.href ? (
+            <Link href={featuredProject.href} className={cardClassName}>
+              {cardContent}
+            </Link>
+          ) : (
+            <div className={cardClassName}>{cardContent}</div>
+          );
+        })()
+      ) : (
+        <div className="w-full max-w-sm relative aspect-[21/9] rounded-2xl overflow-hidden border border-white/10 shadow-2xl mb-8">
+          <Image src={bannerSrc} alt="TWS" fill className="object-cover" />
+        </div>
+      )}
 
       {/* Actions */}
       <div className="w-full max-w-sm space-y-3 mb-16">

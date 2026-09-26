@@ -6,6 +6,11 @@ export default function EzequielPetruzziPage() {
       name="Ezequiel Petruzzi"
       photoSrc="/DreamTeam/EzeTwsTeam.png"
       bannerSrc="/nfc/MeetandWork-sin marca.jpg"
+      featuredProject={{
+        title: 'Plataforma integral de inteligencia ganadera',
+        imageSrc: '/nfc/inteligencia-ganadera.png',
+        href: '/labs/inteligencia-ganadera',
+      }}
       vcard={{
         firstName: 'Ezequiel',
         lastName: 'Petruzzi',
