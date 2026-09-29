@@ -155,6 +155,13 @@ export default function Navbar() {
                   Nosotros
                 </Link>
                 <span className={`font-light text-lg transition-colors duration-500 ${isDarkTheme ? 'text-white/20' : 'text-black/10'}`}>|</span>
+                <Link 
+                  href="/labs" 
+                  className={`transition-all border-b-2 border-transparent hover:border-white pb-1 ${pathname.startsWith('/labs') ? 'border-white' : ''}`}
+                >
+                  Labs
+                </Link>
+                <span className={`font-light text-lg transition-colors duration-500 ${isDarkTheme ? 'text-white/20' : 'text-black/10'}`}>|</span>
                 <button 
                   onClick={openModal} 
                   className={`transition-all border-b-2 border-transparent hover:border-white pb-1`}
@@ -185,6 +192,7 @@ export default function Navbar() {
                   <Link href="/" onClick={handleLogoClick} className="hover:text-accent-cyan transition-colors py-2">Inicio</Link>
                   <Link href="/#servicios" onClick={(e) => handleNavigation(e, '/#servicios')} className="hover:text-accent-cyan transition-colors py-2">Servicios</Link>
                   <Link href="/nosotros" onClick={(e) => handleNavigation(e, '/nosotros')} className="hover:text-accent-cyan transition-colors py-2">Nosotros</Link>
+                  <Link href="/labs" onClick={(e) => handleNavigation(e, '/labs')} className="hover:text-accent-cyan transition-colors py-2">Labs</Link>
                   <button onClick={handleContactAndCloseMenu} className="text-accent-cyan font-black hover:opacity-80 transition-opacity py-4 border border-accent-cyan/20 rounded-xl bg-accent-cyan/5 mt-2">Contacto</button>
                 </div>
               </div>
